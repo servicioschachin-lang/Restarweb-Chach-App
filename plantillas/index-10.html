@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cucharita Café | Menú</title>
+<meta name="description" content="Comida sencilla, hecha al día. Mira nuestro menú y reserva tu mesa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#e8f5ee;
+    --ink:#23433a;
+    --muted:#5d7c72;
+    --butter:#ffe08f;
+    --pink:#ffb0c0;
+    --mint:#c2e9d6;
+    --surface:#f4fcf8;
+    --shade:54,110,92;
+
+    --out:14px 14px 30px rgba(var(--shade),.22), -12px -12px 26px rgba(255,255,255,.95);
+    --in:inset 7px 7px 14px rgba(255,255,255,.75), inset -9px -9px 18px rgba(var(--shade),.13);
+    --press:inset 9px 9px 18px rgba(var(--shade),.24), inset -9px -9px 18px rgba(255,255,255,.95);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Nunito',system-ui,sans-serif;
+    color:var(--ink);background:var(--bg);
+    line-height:1.65;overflow-x:hidden;
+  }
+  img{display:block;width:100%;height:100%;object-fit:cover}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{font-family:'Fredoka',sans-serif;line-height:1.1;font-weight:600}
+  :focus-visible{outline:3px solid var(--ink);outline-offset:4px;border-radius:14px}
+
+  .wrap{width:min(1080px,90%);margin-inline:auto}
+  section{padding:80px 0}
+
+  /* Base de arcilla */
+  .clay{background:var(--surface);border-radius:34px;box-shadow:var(--out),var(--in)}
+  .clay.butter{background:var(--butter)}
+  .clay.pink{background:var(--pink)}
+  .clay.mint{background:var(--mint)}
+
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    padding:16px 34px;border:none;border-radius:999px;cursor:pointer;
+    font:600 1.05rem 'Fredoka',sans-serif;color:var(--ink);
+    background:var(--butter);box-shadow:var(--out),var(--in);
+    transition:box-shadow .2s, transform .2s;
+  }
+  .btn:hover{transform:translateY(-2px)}
+  .btn:active{box-shadow:var(--press);transform:none}
+
+  /* Navegación */
+  header{padding:22px 0}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:12px 14px 12px 28px;border-radius:999px}
+  .logo{font:700 1.4rem 'Fredoka',sans-serif}
+  .nav-links{display:flex;gap:30px;list-style:none;color:var(--muted);font-weight:600}
+  .nav-links a:hover{color:var(--ink)}
+  nav .btn{padding:11px 24px;font-size:1rem}
+
+  /* Hero */
+  .hero{padding:50px 0 70px}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+  .hero h1{font-size:clamp(2.6rem,6.4vw,4.8rem);margin-bottom:20px}
+  .hero p{color:var(--muted);font-size:1.15rem;max-width:42ch;margin-bottom:34px}
+  .plate{
+    position:relative;aspect-ratio:1/1;width:min(100%,440px);margin-inline:auto;border-radius:50%;
+    padding:16px;background:var(--butter);box-shadow:var(--out),var(--in);
+    animation:pop .9s cubic-bezier(.2,1.4,.4,1) both;
+  }
+  .plate .inner{width:100%;height:100%;border-radius:50%;overflow:hidden;box-shadow:var(--press);background:var(--mint);display:grid;place-items:center;font-size:5rem;position:relative}
+  .plate .inner img{position:absolute;inset:0}
+  .tag{position:absolute;padding:12px 20px;border-radius:999px;font:600 1rem 'Fredoka',sans-serif;box-shadow:var(--out),var(--in)}
+  .tag.t1{left:-4%;bottom:14%;background:var(--pink)}
+  .tag.t2{right:-2%;top:10%;background:var(--surface)}
+  @keyframes pop{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
+
+  /* Menú */
+  .head{margin-bottom:34px}
+  .head h2{font-size:clamp(2rem,4.6vw,3.1rem);margin-bottom:10px}
+  .head p{color:var(--muted);max-width:48ch}
+  .tabs{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:38px}
+  .tab{
+    padding:12px 26px;border:none;border-radius:999px;cursor:pointer;
+    background:var(--surface);color:var(--ink);font:600 1rem 'Fredoka',sans-serif;
+    box-shadow:var(--out),var(--in);transition:box-shadow .2s;
+  }
+  .tab[aria-pressed="true"]{box-shadow:var(--press);background:var(--mint)}
+  .items{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+  .item{display:grid;grid-template-columns:104px 1fr;gap:20px;align-items:center;padding:20px 24px 20px 20px}
+  .item[hidden]{display:none}
+  .thumb{width:104px;height:104px;border-radius:50%;overflow:hidden;box-shadow:var(--press);background:var(--butter);display:grid;place-items:center;font-size:2.4rem;position:relative}
+  .thumb img{position:absolute;inset:0}
+  .item h3{font-size:1.25rem;margin-bottom:4px}
+  .item p{color:var(--muted);font-size:.95rem;line-height:1.5}
+  .price{display:inline-block;margin-top:10px;padding:5px 16px;border-radius:999px;background:var(--pink);font:600 1rem 'Fredoka',sans-serif;box-shadow:var(--out),var(--in)}
+
+  /* Detalles */
+  .feats{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .feat{padding:34px 30px;text-align:center}
+  .feat .ico{width:78px;height:78px;margin:0 auto 18px;border-radius:50%;display:grid;place-items:center;font-size:2rem;background:var(--butter);box-shadow:var(--out),var(--in)}
+  .feat:nth-child(2) .ico{background:var(--pink)}
+  .feat:nth-child(3) .ico{background:var(--mint)}
+  .feat h3{font-size:1.3rem;margin-bottom:8px}
+  .feat p{color:var(--muted)}
+
+  /* Visita */
+  .visit{display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:clamp(28px,5vw,54px);align-items:center}
+  .visit h2{font-size:clamp(1.9rem,4vw,2.7rem);margin-bottom:14px}
+  .visit p{color:var(--ink);opacity:.8;margin-bottom:26px;max-width:38ch}
+  .hours{list-style:none}
+  .hours li{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:2px dotted rgba(35,67,58,.22)}
+  .hours li:last-child{border:none}
+
+  footer{padding:30px 0 50px;color:var(--muted)}
+  .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+  @media (max-width:900px){
+    .hero-grid,.visit{grid-template-columns:1fr}
+    .items{grid-template-columns:1fr}
+    .feats{grid-template-columns:1fr}
+    .nav-links{display:none}
+    .hero{padding-top:20px}
+    .tag.t1{left:2%}.tag.t2{right:2%}
+  }
+  @media (max-width:480px){
+    section{padding:56px 0}
+    .item{grid-template-columns:84px 1fr;gap:14px;padding:16px}
+    .thumb{width:84px;height:84px;font-size:2rem}
+    .tab{padding:10px 20px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav class="clay" aria-label="Principal">
+      <a href="#inicio" class="logo">Cucharita</a>
+      <ul class="nav-links">
+        <li><a href="#menu">Menú</a></li>
+        <li><a href="#detalles">Nosotros</a></li>
+        <li><a href="#visita">Visítanos</a></li>
+      </ul>
+      <a href="#visita" class="btn">Reservar mesa</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Comida sencilla, hecha con calma</h1>
+        <p>Platos del día, café recién molido y postres caseros. Ven por un desayuno largo o una cena tranquila.</p>
+        <a href="#menu" class="btn">Ver el menú</a>
+      </div>
+      <div class="plate">
+        <div class="inner" aria-hidden="false">
+          <span aria-hidden="true">🍽️</span>
+          <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80" alt="Plato de ensalada fresca" onerror="this.style.display='none'">
+        </div>
+        <div class="tag t1">Abierto hoy</div>
+        <div class="tag t2">4.9 de 5</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu">
+    <div class="wrap">
+      <div class="head">
+        <h2>Nuestro menú</h2>
+        <p>Ingredientes frescos y porciones pensadas para disfrutar sin prisa.</p>
+      </div>
+
+      <div class="tabs" role="group" aria-label="Categorías del menú">
+        <button class="tab" data-cat="entradas" aria-pressed="true">Entradas</button>
+        <button class="tab" data-cat="platos" aria-pressed="false">Platos</button>
+        <button class="tab" data-cat="postres" aria-pressed="false">Postres</button>
+        <button class="tab" data-cat="bebidas" aria-pressed="false">Bebidas</button>
+      </div>
+
+      <div class="items" id="items">
+        <!-- Entradas -->
+        <article class="clay item" data-cat="entradas">
+          <div class="thumb"><span aria-hidden="true">🥗</span><img loading="lazy" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=300&q=80" alt="Ensalada fresca" onerror="this.style.display='none'"></div>
+          <div><h3>Ensalada fresca</h3><p>Hojas verdes, tomate, pepino y aderezo de la casa.</p><span class="price">$6.50</span></div>
+        </article>
+        <article class="clay item" data-cat="entradas">
+          <div class="thumb"><span aria-hidden="true">🌮</span><img loading="lazy" src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=300&q=80" alt="Tacos pequeños" onerror="this.style.display='none'"></div>
+          <div><h3>Tacos pequeños</h3><p>Tres tortillas suaves con relleno del día y salsa suave.</p><span class="price">$7.00</span></div>
+        </article>
+        <article class="clay item" data-cat="entradas">
+          <div class="thumb"><span aria-hidden="true">🍞</span><img loading="lazy" src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=300&q=80" alt="Tostada con huevo" onerror="this.style.display='none'"></div>
+          <div><h3>Tostada con huevo</h3><p>Pan artesanal, huevo estrellado y hierbas frescas.</p><span class="price">$5.50</span></div>
+        </article>
+        <article class="clay item" data-cat="entradas">
+          <div class="thumb"><span aria-hidden="true">🍲</span><img loading="lazy" src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=300&q=80" alt="Sopa del día" onerror="this.style.display='none'"></div>
+          <div><h3>Sopa del día</h3><p>Receta casera, servida caliente con pan tostado.</p><span class="price">$5.00</span></div>
+        </article>
+
+        <!-- Platos -->
+        <article class="clay item" data-cat="platos" hidden>
+          <div class="thumb"><span aria-hidden="true">🍝</span><img loading="lazy" src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=300&q=80" alt="Pasta" onerror="this.style.display='none'"></div>
+          <div><h3>Pasta cremosa</h3><p>Pasta al dente con salsa suave y queso rallado.</p><span class="price">$11.00</span></div>
+        </article>
+        <article class="clay item" data-cat="platos" hidden>
+          <div class="thumb"><span aria-hidden="true">🍕</span><img loading="lazy" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=300&q=80" alt="Pizza" onerror="this.style.display='none'"></div>
+          <div><h3>Pizza de la casa</h3><p>Masa fina, tomate, queso y albahaca fresca.</p><span class="price">$12.50</span></div>
+        </article>
+        <article class="clay item" data-cat="platos" hidden>
+          <div class="thumb"><span aria-hidden="true">🍔</span><img loading="lazy" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=300&q=80" alt="Hamburguesa" onerror="this.style.display='none'"></div>
+          <div><h3>Hamburguesa clásica</h3><p>Carne jugosa, queso, lechuga y pan suave.</p><span class="price">$10.50</span></div>
+        </article>
+        <article class="clay item" data-cat="platos" hidden>
+          <div class="thumb"><span aria-hidden="true">🍛</span><img loading="lazy" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=300&q=80" alt="Plato fuerte" onerror="this.style.display='none'"></div>
+          <div><h3>Plato del día</h3><p>Proteína, guarnición y vegetales de temporada.</p><span class="price">$9.50</span></div>
+        </article>
+
+        <!-- Postres -->
+        <article class="clay item" data-cat="postres" hidden>
+          <div class="thumb"><span aria-hidden="true">🥞</span><img loading="lazy" src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=300&q=80" alt="Panqueques" onerror="this.style.display='none'"></div>
+          <div><h3>Panqueques</h3><p>Torre esponjosa con miel y frutas frescas.</p><span class="price">$6.00</span></div>
+        </article>
+        <article class="clay item" data-cat="postres" hidden>
+          <div class="thumb"><span aria-hidden="true">🍨</span><img loading="lazy" src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=300&q=80" alt="Helado" onerror="this.style.display='none'"></div>
+          <div><h3>Helado artesanal</h3><p>Tres bolas a elegir entre los sabores de la semana.</p><span class="price">$4.50</span></div>
+        </article>
+        <article class="clay item" data-cat="postres" hidden>
+          <div class="thumb"><span aria-hidden="true">🍰</span><img loading="lazy" src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=300&q=80" alt="Postre casero" onerror="this.style.display='none'"></div>
+          <div><h3>Pastel del día</h3><p>Una porción generosa, horneada esta mañana.</p><span class="price">$5.00</span></div>
+        </article>
+
+        <!-- Bebidas -->
+        <article class="clay item" data-cat="bebidas" hidden>
+          <div class="thumb"><span aria-hidden="true">☕</span><img loading="lazy" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=300&q=80" alt="Café" onerror="this.style.display='none'"></div>
+          <div><h3>Café de la casa</h3><p>Grano tostado local, caliente o frío.</p><span class="price">$2.50</span></div>
+        </article>
+        <article class="clay item" data-cat="bebidas" hidden>
+          <div class="thumb"><span aria-hidden="true">🥛</span><img loading="lazy" src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=300&q=80" alt="Latte" onerror="this.style.display='none'"></div>
+          <div><h3>Latte cremoso</h3><p>Espresso con leche vaporizada y arte en la espuma.</p><span class="price">$3.50</span></div>
+        </article>
+        <article class="clay item" data-cat="bebidas" hidden>
+          <div class="thumb"><span aria-hidden="true">🍹</span><img loading="lazy" src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=300&q=80" alt="Bebida fría" onerror="this.style.display='none'"></div>
+          <div><h3>Limonada de temporada</h3><p>Fruta natural, hielo y un toque de menta.</p><span class="price">$3.00</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="detalles">
+    <div class="wrap">
+      <div class="feats">
+        <article class="clay feat">
+          <div class="ico" aria-hidden="true">🌿</div>
+          <h3>Ingredientes frescos</h3>
+          <p>Compramos a productores locales cada semana.</p>
+        </article>
+        <article class="clay feat">
+          <div class="ico" aria-hidden="true">🥐</div>
+          <h3>Hecho cada día</h3>
+          <p>Pan, salsas y postres salen de nuestra cocina.</p>
+        </article>
+        <article class="clay feat">
+          <div class="ico" aria-hidden="true">🛍️</div>
+          <h3>Para llevar</h3>
+          <p>Pide por teléfono y recoge sin esperar.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="visita">
+    <div class="wrap">
+      <div class="clay butter visit">
+        <div>
+          <h2>Reserva tu mesa</h2>
+          <p>Calle de los Almendros 24, Centro. Escríbenos o llama al 0000-0000 y te guardamos un lugar.</p>
+          <a href="#" class="btn" style="background:var(--surface)">Llamar ahora</a>
+        </div>
+        <ul class="hours" aria-label="Horarios">
+          <li><span>Lunes a viernes</span><b>8:00 – 21:00</b></li>
+          <li><span>Sábado</span><b>9:00 – 22:00</b></li>
+          <li><span>Domingo</span><b>9:00 – 17:00</b></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Cucharita Café. Todos los derechos reservados.</span>
+    <span>Instagram · Facebook · WhatsApp</span>
+  </div>
+</footer>
+
+<script>
+  const tabs = document.querySelectorAll('.tab');
+  const items = document.querySelectorAll('.item');
+  tabs.forEach(t => t.addEventListener('click', () => {
+    tabs.forEach(x => x.setAttribute('aria-pressed', x === t ? 'true' : 'false'));
+    items.forEach(i => i.hidden = i.dataset.cat !== t.dataset.cat);
+  }));
+</script>
+</body>
+</html>

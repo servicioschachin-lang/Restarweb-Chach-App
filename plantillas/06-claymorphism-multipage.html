@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sushi Pop · Claymorfismo · Multipágina</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  :root{--bg:#e8e2ff;--ink:#2d2060;--purple:#7c5cff;--pink:#ff8ad8;--mint:#7ee8c5;--sun:#ffd86b;--sh:rgba(80,60,170,.28)}
+  body{background:var(--bg);color:var(--ink);font-family:'Quicksand',sans-serif;font-weight:600}
+  h1,h2,h3,h4,.brand{font-family:'Fredoka',sans-serif;font-weight:600}
+  .clay{border-radius:40px;box-shadow:14px 14px 30px var(--sh),inset -9px -9px 18px rgba(0,0,0,.09),inset 9px 9px 18px rgba(255,255,255,.7)}
+  .clay-sm{border-radius:24px;box-shadow:7px 7px 16px var(--sh),inset -5px -5px 10px rgba(0,0,0,.09),inset 5px 5px 10px rgba(255,255,255,.7)}
+  .w{background:#f7f4ff}.p{background:var(--purple);color:#fff}.k{background:var(--pink)}.m{background:var(--mint)}.s{background:var(--sun)}
+  .navbar{background:#f7f4ff;margin:1rem;padding:.6rem 1.2rem}
+  .navbar-brand{font-family:'Fredoka';font-size:1.7rem;color:var(--purple)!important}
+  .nav-link{color:var(--ink)!important;font-family:'Fredoka';font-size:1.05rem;border-radius:999px;padding:.45rem 1.1rem!important}
+  .nav-link.on{background:var(--sun);box-shadow:inset -3px -3px 6px rgba(0,0,0,.1),inset 3px 3px 6px rgba(255,255,255,.7)}
+  .navbar-toggler{border:0;background:var(--sun);border-radius:18px;width:46px;height:46px;box-shadow:5px 5px 10px var(--sh),inset -3px -3px 6px rgba(0,0,0,.1),inset 3px 3px 6px rgba(255,255,255,.7)}
+  .navbar-toggler:focus{box-shadow:0 0 0 4px rgba(124,92,255,.4)}
+  .btn-clay{font-family:'Fredoka';font-size:1.1rem;border:0;border-radius:999px;padding:.8rem 1.9rem;color:var(--ink);box-shadow:7px 7px 14px var(--sh),inset -5px -5px 10px rgba(0,0,0,.12),inset 5px 5px 10px rgba(255,255,255,.6);transition:transform .2s}
+  .btn-clay:hover{transform:translateY(-3px);color:var(--ink)}
+  .btn-clay.p:hover{color:#fff}
+  .form-control,.form-select{border:0;border-radius:22px;padding:.9rem 1.2rem;background:#fff;color:var(--ink);font-weight:600;box-shadow:inset 5px 5px 10px rgba(80,60,170,.18),inset -5px -5px 10px #fff}
+  .form-control:focus,.form-select:focus{box-shadow:inset 5px 5px 10px rgba(80,60,170,.18),0 0 0 4px rgba(124,92,255,.4)}
+  .page{display:none;padding-bottom:3rem}.page.active{display:block}
+  .blob{border-radius:55% 45% 60% 40% / 45% 55% 45% 55%;object-fit:cover;background:#d8cdff}
+  .tag{display:inline-block;border-radius:999px;padding:.3rem .9rem;font-family:'Fredoka';font-size:.9rem}
+  .price{font-family:'Fredoka';font-size:1.2rem;color:var(--purple)}
+  .bgbox{background-size:cover;background-position:center;position:relative;overflow:hidden;color:#fff}
+  .bgbox::before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(45,32,96,.85),rgba(124,92,255,.4))}
+  .bgbox>*{position:relative}
+  .soc{width:48px;height:48px;border-radius:50%;display:inline-grid;place-items:center;color:var(--ink);text-decoration:none;box-shadow:5px 5px 10px var(--sh),inset -3px -3px 6px rgba(0,0,0,.1),inset 3px 3px 6px rgba(255,255,255,.7)}
+  .soc:hover{transform:translateY(-2px);color:var(--ink)}
+  a:focus-visible,button:focus-visible{outline:4px solid var(--purple);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg clay sticky-top" style="border-radius:999px">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#inicio"><i class="fa-solid fa-fish me-2"></i>Sushi Pop</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Abrir menú"><i class="fa-solid fa-bars"></i></button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto gap-lg-1 py-3 py-lg-0">
+        <li class="nav-item"><a class="nav-link" data-link="inicio" href="#inicio">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" data-link="menu" href="#menu">Menú</a></li>
+        <li class="nav-item"><a class="nav-link" data-link="nosotros" href="#nosotros">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" data-link="reservas" href="#reservas">Reservas</a></li>
+        <li class="nav-item"><a class="nav-link" data-link="contacto" href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+
+<!-- INICIO -->
+<section class="page" id="inicio">
+  <div class="row align-items-center g-5 py-4">
+    <div class="col-lg-6">
+      <span class="tag s clay-sm mb-3">🍣 Sushi creativo y colorido</span>
+      <h1 class="display-2 lh-1">Rollitos que dan ganas de sonreír.</h1>
+      <p class="fs-5 mt-3 opacity-75">Pescado fresco, arroz esponjoso y salsas divertidas. Texto genérico para presentar tu restaurante.</p>
+      <div class="d-flex flex-wrap gap-3 mt-4"><a href="#menu" class="btn btn-clay p">Ver menú</a><a href="#reservas" class="btn btn-clay k">Reservar mesa</a></div>
+    </div>
+    <div class="col-lg-6"><div class="clay m p-3"><img class="blob w-100" style="height:420px" data-u="1579871494447-9811cf80d66c" alt="Plato de sushi variado"></div></div>
+  </div>
+  <div class="row g-4 mt-2">
+    <div class="col-md-4"><div class="clay w p-4 text-center h-100"><div class="clay-sm k mx-auto mb-3 d-grid" style="width:70px;height:70px;place-items:center;font-size:1.7rem"><i class="fa-solid fa-fish"></i></div><h3 class="h4">Pescado del día</h3><p class="opacity-75 mb-0">Cortes frescos cada mañana.</p></div></div>
+    <div class="col-md-4"><div class="clay w p-4 text-center h-100"><div class="clay-sm m mx-auto mb-3 d-grid" style="width:70px;height:70px;place-items:center;font-size:1.7rem"><i class="fa-solid fa-bowl-rice"></i></div><h3 class="h4">Arroz perfecto</h3><p class="opacity-75 mb-0">Tibio, brillante y en su punto.</p></div></div>
+    <div class="col-md-4"><div class="clay w p-4 text-center h-100"><div class="clay-sm s mx-auto mb-3 d-grid" style="width:70px;height:70px;place-items:center;font-size:1.7rem"><i class="fa-solid fa-leaf"></i></div><h3 class="h4">Opciones veganas</h3><p class="opacity-75 mb-0">Rolls de verduras y tofu.</p></div></div>
+  </div>
+</section>
+
+<!-- MENÚ -->
+<section class="page" id="menu">
+  <h1 class="display-4 mt-3">Menú</h1>
+  <p class="opacity-75 mb-4">Cada roll trae 8 piezas.</p>
+  <div class="row g-4">
+    <div class="col-md-6 col-lg-4"><article class="clay w p-3 h-100"><img class="clay-sm w-100 object-fit-cover" style="height:190px;background:#d8cdff" data-u="1579871494447-9811cf80d66c" alt="Roll de salmón"><div class="p-2 pt-3"><div class="d-flex justify-content-between"><h2 class="h4">Pink Salmon</h2><span class="price">$12</span></div><p class="opacity-75 small mb-2">Salmón, queso crema y pepino.</p><span class="tag k clay-sm">Favorito</span></div></article></div>
+    <div class="col-md-6 col-lg-4"><article class="clay w p-3 h-100"><img class="clay-sm w-100 object-fit-cover" style="height:190px;background:#d8cdff" data-u="1467003909585-2f8a72700288" alt="Salmón fresco"><div class="p-2 pt-3"><div class="d-flex justify-content-between"><h2 class="h4">Sashimi mix</h2><span class="price">$16</span></div><p class="opacity-75 small mb-2">Doce cortes variados.</p><span class="tag m clay-sm">Sin arroz</span></div></article></div>
+    <div class="col-md-6 col-lg-4"><article class="clay w p-3 h-100"><img class="clay-sm w-100 object-fit-cover" style="height:190px;background:#d8cdff" data-u="1512621776951-a57141f2eefd" alt="Bowl vegetal"><div class="p-2 pt-3"><div class="d-flex justify-content-between"><h2 class="h4">Green Roll</h2><span class="price">$10</span></div><p class="opacity-75 small mb-2">Aguacate, pepino y sésamo.</p><span class="tag s clay-sm">Vegano</span></div></article></div>
+  </div>
+  <div class="clay p mt-5 p-4 p-lg-5"><div class="row g-3 align-items-center">
+    <div class="col-md-8"><h2 class="h2">Combo Pop para dos</h2><p class="mb-0 opacity-90">20 piezas, edamame, 2 limonadas y postre de mochi.</p></div>
+    <div class="col-md-4 text-md-end"><span class="display-5" style="font-family:Fredoka">$34</span></div></div></div>
+</section>
+
+<!-- NOSOTROS -->
+<section class="page" id="nosotros">
+  <div class="clay bgbox p-4 p-lg-5 mt-3" data-u="1559339352-11d035aa65de" style="min-height:360px;display:flex;align-items:center">
+    <div style="max-width:560px"><h1 class="display-5">Sushi en serio, ambiente sin solemnidad</h1><p class="mt-3 mb-0 fs-5">Texto genérico: aquí cuentas quién cocina, de dónde viene el pescado y cómo es la experiencia en el local.</p></div>
+  </div>
+  <div class="row g-4 mt-1">
+    <div class="col-md-4"><div class="clay k p-4 text-center"><div class="display-4" style="font-family:Fredoka">9</div>años de cocina</div></div>
+    <div class="col-md-4"><div class="clay m p-4 text-center"><div class="display-4" style="font-family:Fredoka">32</div>rolls distintos</div></div>
+    <div class="col-md-4"><div class="clay s p-4 text-center"><div class="display-4" style="font-family:Fredoka">4.9</div>valoración media</div></div>
+  </div>
+  <div class="row g-4 mt-1 align-items-center">
+    <div class="col-md-6"><img class="clay w-100 object-fit-cover" style="height:280px;background:#d8cdff" data-u="1577219491135-ce391730fb2c" alt="Chef de sushi"></div>
+    <div class="col-md-6"><div class="clay w p-4"><h2 class="h3">Nuestro equipo</h2><p class="opacity-75 mb-0">Tres sushimen, un pastelero y un equipo de sala que te recomienda sin presionarte.</p></div></div>
+  </div>
+</section>
+
+<!-- RESERVAS -->
+<section class="page" id="reservas">
+  <div class="row justify-content-center mt-3"><div class="col-lg-8"><div class="clay w p-4 p-lg-5">
+    <h1 class="display-5">Reserva tu mesa</h1>
+    <p class="opacity-75">Mesas para 2 a 10 personas.</p>
+    <form class="row g-3 mt-2">
+      <div class="col-md-6"><input class="form-control" placeholder="Nombre" aria-label="Nombre" required></div>
+      <div class="col-md-6"><input class="form-control" type="email" placeholder="Correo" aria-label="Correo" required></div>
+      <div class="col-md-4"><input class="form-control" type="date" aria-label="Fecha" required></div>
+      <div class="col-md-4"><input class="form-control" type="time" aria-label="Hora" required></div>
+      <div class="col-md-4"><select class="form-select" aria-label="Personas"><option>2 personas</option><option>4 personas</option><option>6 personas</option><option>8+ personas</option></select></div>
+      <div class="col-12"><button class="btn btn-clay p w-100">Confirmar reserva</button></div>
+      <p data-ok hidden class="text-center mb-0" style="color:var(--purple)">¡Gracias! Recibimos tu solicitud.</p>
+    </form></div></div></div>
+</section>
+
+<!-- CONTACTO -->
+<section class="page" id="contacto">
+  <div class="row g-4 mt-1">
+    <div class="col-lg-6"><div class="clay m p-4 p-lg-5 h-100">
+      <h1 class="display-5">Contacto</h1>
+      <ul class="list-unstyled d-grid gap-3 mt-4">
+        <li><i class="fa-solid fa-location-dot me-3"></i>Calle Sakura 5, Centro</li>
+        <li><i class="fa-solid fa-phone me-3"></i>+00 123 456 789</li>
+        <li><i class="fa-solid fa-envelope me-3"></i>hola@sushipop.example</li>
+        <li><i class="fa-solid fa-clock me-3"></i>Mar–Dom · 13:00–23:00</li>
+      </ul>
+      <div class="d-flex gap-3 mt-4">
+        <a class="soc w" href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a class="soc k" href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a class="soc s" href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a class="soc w" href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div></div></div>
+    <div class="col-lg-6"><div class="clay w p-4 p-lg-5 h-100">
+      <h2 class="h2">Escríbenos</h2>
+      <form class="d-grid gap-3 mt-3">
+        <input class="form-control" placeholder="Nombre" aria-label="Nombre" required>
+        <input class="form-control" type="email" placeholder="Correo" aria-label="Correo" required>
+        <textarea class="form-control" rows="4" placeholder="Mensaje" aria-label="Mensaje" required></textarea>
+        <button class="btn btn-clay k">Enviar mensaje</button>
+        <p data-ok hidden class="text-center mb-0" style="color:var(--purple)">Mensaje enviado.</p>
+      </form></div></div>
+  </div>
+</section>
+</main>
+
+<footer class="container pb-4">
+  <div class="clay-sm w px-4 py-3 d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 small">
+    <span>© 2026 Sushi Pop · Plantilla de ejemplo</span>
+    <span class="d-flex gap-2"><a class="soc k" style="width:38px;height:38px" href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a class="soc m" style="width:38px;height:38px" href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a class="soc s" style="width:38px;height:38px" href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></span>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.querySelectorAll('[data-u]').forEach(e=>{const u='https://images.unsplash.com/photo-'+e.dataset.u+'?auto=format&fit=crop&w=1400&q=70';e.tagName==='IMG'?e.src=u:e.style.backgroundImage='url('+u+')'});
+  const pages=[...document.querySelectorAll('.page')],nav=document.getElementById('nav');
+  function go(){const id=(location.hash||'#inicio').slice(1),t=pages.find(p=>p.id===id)||pages[0];
+    pages.forEach(p=>p.classList.toggle('active',p===t));
+    document.querySelectorAll('[data-link]').forEach(a=>a.classList.toggle('on',a.dataset.link===t.id));
+    bootstrap.Collapse.getInstance(nav)?.hide();scrollTo(0,0)}
+  addEventListener('hashchange',go);go();
+  document.querySelectorAll('form').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();f.querySelector('[data-ok]').hidden=false}));
+</script>
+</body>
+</html>

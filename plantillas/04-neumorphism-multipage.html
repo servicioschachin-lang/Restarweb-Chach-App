@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verde Bowl · Neumorfismo · Multipágina</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root{--bg:#d9e8de;--d:#b4c7ba;--l:#f4fff8;--txt:#1f3a2c;--g:#2f9e6b}
+  body{background:var(--bg);color:var(--txt);font-family:'Source Sans 3',sans-serif;font-size:1.05rem}
+  h1,h2,h3,.brand{font-family:'Sora',sans-serif;font-weight:800;letter-spacing:-.02em}
+  .up{background:var(--bg);border-radius:30px;box-shadow:12px 12px 24px var(--d),-12px -12px 24px var(--l)}
+  .up-s{background:var(--bg);border-radius:18px;box-shadow:6px 6px 12px var(--d),-6px -6px 12px var(--l)}
+  .dn{background:var(--bg);border-radius:18px;box-shadow:inset 6px 6px 12px var(--d),inset -6px -6px 12px var(--l)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border-radius:18px;padding:.9rem 1.7rem;font-weight:700;background:var(--bg);box-shadow:7px 7px 14px var(--d),-7px -7px 14px var(--l);transition:box-shadow .2s}
+  .btn:hover{box-shadow:inset 5px 5px 10px var(--d),inset -5px -5px 10px var(--l)}
+  .btn-g{background:linear-gradient(145deg,#38b57c,#2a8d60);color:#fff}
+  .btn-g:hover{box-shadow:inset 5px 5px 10px #1f6e4b,inset -5px -5px 10px #43c98b}
+  .tab{padding:.6rem 1.1rem;border-radius:14px;font-weight:600}
+  .tab.on{box-shadow:inset 4px 4px 8px var(--d),inset -4px -4px 8px var(--l);color:var(--g)}
+  .field{width:100%;padding:.9rem 1.1rem;border-radius:18px;background:var(--bg);box-shadow:inset 6px 6px 12px var(--d),inset -6px -6px 12px var(--l);color:var(--txt)}
+  .field::placeholder{color:#6d8678}
+  .soc{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--bg);box-shadow:5px 5px 10px var(--d),-5px -5px 10px var(--l)}
+  .soc:hover{color:var(--g);box-shadow:inset 4px 4px 8px var(--d),inset -4px -4px 8px var(--l)}
+  .page{display:none}.page.active{display:block}
+  .cover{background-size:cover;background-position:center;position:relative;overflow:hidden}
+  .cover::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,46,30,.85),rgba(14,46,30,.35))}
+  img{background:#c5d8cb}
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--g);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<header class="sticky top-0 z-50 p-3" style="background:var(--bg)">
+  <nav class="up max-w-6xl mx-auto px-5 py-3 flex items-center justify-between !rounded-[24px]">
+    <a href="#inicio" class="brand text-xl"><i class="fa-solid fa-leaf text-[color:var(--g)] mr-2"></i>Verde Bowl</a>
+    <div class="hidden md:flex gap-1">
+      <a data-link="inicio" href="#inicio" class="tab">Inicio</a>
+      <a data-link="menu" href="#menu" class="tab">Menú</a>
+      <a data-link="nosotros" href="#nosotros" class="tab">Nosotros</a>
+      <a data-link="reservas" href="#reservas" class="tab">Reservas</a>
+      <a data-link="contacto" href="#contacto" class="tab">Contacto</a>
+    </div>
+    <button id="burger" class="md:hidden w-11 h-11 up-s grid place-items-center" aria-label="Abrir menú" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+  </nav>
+  <div id="mobile" class="hidden md:hidden max-w-6xl mx-auto mt-3 up p-4 !rounded-[24px]">
+    <div class="flex flex-col gap-2">
+      <a data-link="inicio" href="#inicio" class="tab">Inicio</a>
+      <a data-link="menu" href="#menu" class="tab">Menú</a>
+      <a data-link="nosotros" href="#nosotros" class="tab">Nosotros</a>
+      <a data-link="reservas" href="#reservas" class="tab">Reservas</a>
+      <a data-link="contacto" href="#contacto" class="tab">Contacto</a>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-6xl mx-auto px-4 py-6 md:py-10">
+
+<!-- INICIO -->
+<section id="inicio" class="page">
+  <div class="up cover min-h-[460px] flex items-center p-8 md:p-14 text-white" data-u="1512621776951-a57141f2eefd">
+    <div class="relative max-w-xl">
+      <p class="inline-block px-4 py-1.5 rounded-full bg-white/15 text-sm mb-5"><i class="fa-solid fa-carrot mr-2"></i>Cocina fresca y vegetal</p>
+      <h1 class="text-4xl md:text-6xl leading-[1.05]">Bowls hechos para sentirte ligero.</h1>
+      <p class="mt-5 text-lg text-white/85">Granos, verduras de temporada y proteínas sencillas. Texto genérico de presentación.</p>
+      <div class="mt-8 flex flex-wrap gap-4"><a href="#menu" class="btn btn-g">Ver menú</a><a href="#reservas" class="btn !bg-white/90 text-[color:var(--txt)]">Reservar</a></div>
+    </div>
+  </div>
+  <div class="grid md:grid-cols-3 gap-6 mt-10">
+    <div class="up p-6 text-center"><div class="up-s w-16 h-16 mx-auto grid place-items-center text-2xl text-[color:var(--g)] mb-4"><i class="fa-solid fa-wheat-awn"></i></div><h3 class="text-lg">Granos integrales</h3><p class="opacity-75 mt-1">Quinoa, arroz negro y cebada.</p></div>
+    <div class="up p-6 text-center"><div class="up-s w-16 h-16 mx-auto grid place-items-center text-2xl text-[color:var(--g)] mb-4"><i class="fa-solid fa-blender"></i></div><h3 class="text-lg">Jugos prensados</h3><p class="opacity-75 mt-1">Sin azúcar añadida.</p></div>
+    <div class="up p-6 text-center"><div class="up-s w-16 h-16 mx-auto grid place-items-center text-2xl text-[color:var(--g)] mb-4"><i class="fa-solid fa-recycle"></i></div><h3 class="text-lg">Envases compostables</h3><p class="opacity-75 mt-1">Para llevar, sin plástico.</p></div>
+  </div>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
+    <img data-u="1540189549336-e6e99c3679fe" alt="Ensalada" class="up h-40 md:h-48 w-full object-cover">
+    <img data-u="1546069901-ba9599a7e63c" alt="Bowl fresco" class="up h-40 md:h-48 w-full object-cover">
+    <img data-u="1498837167922-ddd27525d352" alt="Plato vegetal" class="up h-40 md:h-48 w-full object-cover">
+    <img data-u="1476224203421-9ac39bcb3327" alt="Plato saludable" class="up h-40 md:h-48 w-full object-cover">
+  </div>
+</section>
+
+<!-- MENÚ -->
+<section id="menu" class="page">
+  <h1 class="text-4xl md:text-5xl">Menú</h1>
+  <p class="opacity-75 mt-2 mb-8">Todo puede pedirse vegano. Pregunta por alérgenos.</p>
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="up p-6"><h2 class="text-2xl text-[color:var(--g)] mb-4">Bowls</h2>
+      <ul class="space-y-3">
+        <li class="dn px-4 py-3 flex justify-between gap-3"><span>Bowl Verde<br><small class="opacity-70">Quinoa, aguacate, edamame</small></span><b>$12</b></li>
+        <li class="dn px-4 py-3 flex justify-between gap-3"><span>Bowl Salmón<br><small class="opacity-70">Arroz, salmón, pepino</small></span><b>$14</b></li>
+        <li class="dn px-4 py-3 flex justify-between gap-3"><span>Bowl Falafel<br><small class="opacity-70">Hummus, tomate, tahini</small></span><b>$11</b></li>
+      </ul></div>
+    <div class="up p-6"><h2 class="text-2xl text-[color:var(--g)] mb-4">Ensaladas</h2>
+      <ul class="space-y-3">
+        <li class="dn px-4 py-3 flex justify-between gap-3"><span>César ligera<br><small class="opacity-70">Pollo, parmesano, kale</small></span><b>$10</b></li>
+        <li class="dn px-4 py-3 flex justify-between gap-3"><span>Mediterránea<br><small class="opacity-70">Feta, aceitunas, pepino</small></span><b>$9</b></li>
+        <li class="dn px-4 py-3 flex justify-between gap-3"><span>Remolacha y nuez<br><small class="opacity-70">Cabra, rúcula</small></span><b>$10</b></li>
+      </ul></div>
+    <div class="up p-6"><h2 class="text-2xl text-[color:var(--g)] mb-4">Bebidas</h2>
+      <ul class="space-y-3">
+        <li class="dn px-4 py-3 flex justify-between gap-3"><span>Jugo verde</span><b>$5</b></li>
+        <li class="dn px-4 py-3 flex justify-between gap-3"><span>Kombucha</span><b>$5</b></li>
+        <li class="dn px-4 py-3 flex justify-between gap-3"><span>Limonada de jengibre</span><b>$4</b></li>
+      </ul></div>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section id="nosotros" class="page">
+  <div class="grid lg:grid-cols-2 gap-8 items-center">
+    <div class="up p-4"><img data-u="1577219491135-ce391730fb2c" alt="Cocinero preparando ensaladas" class="w-full h-80 lg:h-[26rem] object-cover rounded-[22px]"></div>
+    <div class="up p-8 md:p-10">
+      <h1 class="text-3xl md:text-4xl">Comer bien no tiene que ser aburrido</h1>
+      <p class="mt-4 opacity-80">Empezamos como un pequeño puesto de mercado y hoy cocinamos para el barrio todos los días. Texto genérico: cuenta aquí tu historia, tus valores y a tus proveedores.</p>
+      <div class="grid grid-cols-3 gap-4 mt-6 text-center">
+        <div class="dn py-4"><b class="text-2xl block">100%</b><small>vegetal opcional</small></div>
+        <div class="dn py-4"><b class="text-2xl block">15</b><small>granjas aliadas</small></div>
+        <div class="dn py-4"><b class="text-2xl block">0</b><small>plástico</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESERVAS -->
+<section id="reservas" class="page">
+  <div class="max-w-2xl mx-auto up p-8 md:p-10">
+    <h1 class="text-3xl md:text-4xl">Reserva tu mesa</h1>
+    <p class="opacity-75 mt-2">Para grupos de más de 8, escríbenos por WhatsApp.</p>
+    <form class="grid sm:grid-cols-2 gap-5 mt-8">
+      <input class="field" placeholder="Nombre" aria-label="Nombre" required>
+      <input class="field" type="email" placeholder="Correo" aria-label="Correo" required>
+      <input class="field" type="date" aria-label="Fecha" required>
+      <input class="field" type="time" aria-label="Hora" required>
+      <select class="field sm:col-span-2" aria-label="Personas"><option>1–2 personas</option><option>3–4 personas</option><option>5–8 personas</option></select>
+      <button class="btn btn-g sm:col-span-2">Confirmar reserva</button>
+      <p data-ok hidden class="sm:col-span-2 text-center font-bold text-[color:var(--g)]">Gracias, recibimos tu solicitud.</p>
+    </form>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="page">
+  <div class="grid md:grid-cols-2 gap-8">
+    <div class="up p-8">
+      <h1 class="text-3xl md:text-4xl">Contacto</h1>
+      <ul class="mt-6 space-y-4">
+        <li><i class="fa-solid fa-location-dot w-8 text-[color:var(--g)]"></i>Av. Jardín 88, Zona Norte</li>
+        <li><i class="fa-solid fa-phone w-8 text-[color:var(--g)]"></i>+00 123 456 789</li>
+        <li><i class="fa-solid fa-envelope w-8 text-[color:var(--g)]"></i>hola@verdebowl.example</li>
+        <li><i class="fa-solid fa-clock w-8 text-[color:var(--g)]"></i>Lun–Sáb · 11:00–21:00</li>
+      </ul>
+      <div class="flex gap-4 mt-8">
+        <a class="soc" href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a class="soc" href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a class="soc" href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a class="soc" href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="up p-8">
+      <h2 class="text-2xl">Escríbenos</h2>
+      <form class="grid gap-5 mt-6">
+        <input class="field" placeholder="Nombre" aria-label="Nombre" required>
+        <input class="field" type="email" placeholder="Correo" aria-label="Correo" required>
+        <textarea class="field" rows="4" placeholder="Mensaje" aria-label="Mensaje" required></textarea>
+        <button class="btn btn-g">Enviar mensaje</button>
+        <p data-ok hidden class="text-center font-bold text-[color:var(--g)]">Mensaje enviado.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="max-w-6xl mx-auto px-4 pb-8">
+  <div class="up px-6 py-4 flex flex-col md:flex-row gap-3 items-center justify-between text-sm !rounded-[24px]">
+    <span>© 2026 Verde Bowl · Plantilla de ejemplo</span>
+    <span class="flex gap-3"><a class="soc !w-9 !h-9" href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a class="soc !w-9 !h-9" href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a class="soc !w-9 !h-9" href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></span>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('[data-u]').forEach(e=>{const u='https://images.unsplash.com/photo-'+e.dataset.u+'?auto=format&fit=crop&w=1400&q=70';e.tagName==='IMG'?e.src=u:e.style.backgroundImage='url('+u+')'});
+  const pages=[...document.querySelectorAll('.page')],m=document.getElementById('mobile'),b=document.getElementById('burger');
+  function go(){const id=(location.hash||'#inicio').slice(1),t=pages.find(p=>p.id===id)||pages[0];
+    pages.forEach(p=>p.classList.toggle('active',p===t));
+    document.querySelectorAll('[data-link]').forEach(a=>a.classList.toggle('on',a.dataset.link===t.id));
+    m.classList.add('hidden');b.setAttribute('aria-expanded','false');b.innerHTML='<i class="fa-solid fa-bars"></i>';scrollTo(0,0)}
+  addEventListener('hashchange',go);go();
+  b.onclick=()=>{const o=m.classList.toggle('hidden');b.setAttribute('aria-expanded',!o);b.innerHTML=o?'<i class="fa-solid fa-bars"></i>':'<i class="fa-solid fa-xmark"></i>'};
+  document.querySelectorAll('form').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();f.querySelector('[data-ok]').hidden=false}));
+</script>
+</body>
+</html>

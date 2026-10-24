@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hoja y Brasa | Restaurante</title>
+<meta name="description" content="Cocina fresca de temporada. Mira el menú y reserva tu mesa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#e8efe3;
+    --surface:#f3f8ee;
+    --ink:#26332b;
+    --muted:#667a6c;
+    --tomato:#f2664a;
+    --butter:#ffd36b;
+    --leaf:#6dbf8a;
+    --shadow:rgba(98,128,106,.38);
+    --light:rgba(255,255,255,.95);
+    --radius:34px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Nunito',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+  img{display:block;width:100%;height:100%;object-fit:cover}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.1}
+  :focus-visible{outline:3px solid var(--tomato);outline-offset:3px;border-radius:14px}
+
+  .wrap{width:min(1080px,90%);margin-inline:auto}
+  section{padding:96px 0}
+
+  /* Superficie de arcilla */
+  .clay{
+    background:var(--surface);
+    border-radius:var(--radius);
+    box-shadow:
+      14px 14px 28px var(--shadow),
+      -10px -10px 22px var(--light),
+      inset 5px 5px 10px rgba(255,255,255,.9),
+      inset -7px -7px 14px rgba(98,128,106,.16);
+  }
+  .clay-in{
+    background:var(--bg);
+    border-radius:22px;
+    box-shadow:inset 6px 6px 12px rgba(98,128,106,.3), inset -6px -6px 12px var(--light);
+  }
+
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    padding:16px 34px;border:none;border-radius:999px;cursor:pointer;
+    font:600 1.05rem 'Fredoka',sans-serif;color:#fff;background:var(--tomato);
+    box-shadow:8px 8px 18px rgba(242,102,74,.4), -6px -6px 14px var(--light),
+      inset 3px 3px 7px rgba(255,255,255,.45), inset -4px -4px 9px rgba(160,50,30,.3);
+    transition:transform .15s, box-shadow .15s;
+  }
+  .btn:hover{transform:translateY(-2px)}
+  .btn:active{transform:translateY(1px);box-shadow:inset 4px 4px 10px rgba(160,50,30,.5), inset -3px -3px 8px rgba(255,255,255,.25)}
+  .btn-soft{color:var(--ink);background:var(--surface);
+    box-shadow:8px 8px 18px var(--shadow), -6px -6px 14px var(--light), inset 3px 3px 7px rgba(255,255,255,.9), inset -4px -4px 9px rgba(98,128,106,.18)}
+  .btn-soft:active{box-shadow:inset 5px 5px 10px var(--shadow), inset -4px -4px 8px var(--light)}
+
+  .sec-title{font-size:clamp(2rem,4.5vw,3rem);margin-bottom:12px}
+  .sec-sub{color:var(--muted);max-width:46ch;margin-bottom:44px}
+
+  /* Navegación */
+  header{padding:26px 0}
+  nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .logo{font:600 1.6rem 'Fredoka',sans-serif;display:flex;align-items:center;gap:10px}
+  .logo i{width:34px;height:34px;border-radius:50%;background:var(--leaf);
+    box-shadow:4px 4px 9px var(--shadow), -3px -3px 7px var(--light), inset 2px 2px 5px rgba(255,255,255,.6), inset -3px -3px 6px rgba(40,100,60,.35)}
+  .nav-links{display:flex;gap:30px;list-style:none;color:var(--muted);font-weight:600}
+  .nav-links a:hover{color:var(--ink)}
+  nav .btn{padding:12px 26px;font-size:.98rem}
+
+  /* Hero */
+  .hero{padding:40px 0 70px}
+  .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .hero h1{font-size:clamp(2.8rem,6.4vw,5rem);margin-bottom:20px}
+  .hero p{color:var(--muted);font-size:1.15rem;max-width:42ch;margin-bottom:32px}
+  .hero-cta{display:flex;gap:18px;flex-wrap:wrap}
+  .hero-img{aspect-ratio:1/1;padding:14px;border-radius:48px}
+  .hero-img .pic{width:100%;height:100%;border-radius:36px;overflow:hidden;background:var(--butter);display:grid;place-items:center;font-size:5rem;
+    box-shadow:inset 4px 4px 10px rgba(0,0,0,.08)}
+  .hero-img .pic img{grid-area:1/1}
+  .hero-img .pic span{grid-area:1/1}
+
+  /* Valores */
+  .values{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .value{padding:34px 28px}
+  .ball{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-size:1.6rem;margin-bottom:18px;
+    background:var(--butter);box-shadow:5px 5px 11px var(--shadow), -4px -4px 9px var(--light), inset 3px 3px 6px rgba(255,255,255,.6), inset -4px -4px 8px rgba(190,140,20,.3)}
+  .value h3{font-size:1.35rem;margin-bottom:6px}
+  .value p{color:var(--muted)}
+
+  /* Menú */
+  .tabs{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px}
+  .tab{padding:12px 26px;border:none;border-radius:999px;cursor:pointer;color:var(--muted);
+    font:500 1rem 'Fredoka',sans-serif;background:var(--surface);
+    box-shadow:6px 6px 13px var(--shadow), -5px -5px 11px var(--light), inset 2px 2px 5px rgba(255,255,255,.9), inset -3px -3px 7px rgba(98,128,106,.15)}
+  .tab[aria-pressed="true"]{color:var(--ink);background:var(--bg);
+    box-shadow:inset 5px 5px 10px var(--shadow), inset -5px -5px 10px var(--light)}
+  .menu{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+  .dish{padding:26px 30px;display:flex;justify-content:space-between;gap:20px;align-items:flex-start}
+  .dish h3{font-size:1.25rem;margin-bottom:4px}
+  .dish p{color:var(--muted);font-size:.95rem}
+  .dish .price{font:600 1.35rem 'Fredoka',sans-serif;color:var(--tomato);white-space:nowrap}
+  .menu .dish[hidden]{display:none}
+
+  /* Galería */
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .shot{aspect-ratio:4/5;padding:12px;border-radius:40px}
+  .shot .pic{width:100%;height:100%;border-radius:30px;overflow:hidden;display:grid;place-items:center;font-size:4rem;box-shadow:inset 3px 3px 9px rgba(0,0,0,.08)}
+  .shot:nth-child(1) .pic{background:var(--leaf)}
+  .shot:nth-child(2) .pic{background:var(--butter)}
+  .shot:nth-child(3) .pic{background:#ffb199}
+  .shot .pic img,.shot .pic span{grid-area:1/1}
+
+  /* Reserva */
+  .book-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:start}
+  .book{padding:40px}
+  .field{margin-bottom:18px}
+  label{display:block;font-weight:700;margin-bottom:8px;font-size:.95rem}
+  input,select{
+    width:100%;padding:15px 20px;border:none;border-radius:20px;background:var(--bg);color:var(--ink);
+    font:600 1rem 'Nunito',sans-serif;
+    box-shadow:inset 5px 5px 10px rgba(98,128,106,.3), inset -5px -5px 10px var(--light);
+  }
+  input::placeholder{color:#93a598}
+  input:focus,select:focus{outline:3px solid rgba(242,102,74,.45);outline-offset:2px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .book .btn{width:100%;margin-top:8px}
+  .msg{margin-top:18px;padding:16px 20px;border-radius:20px;display:none;background:var(--bg);
+    box-shadow:inset 4px 4px 9px rgba(98,128,106,.3), inset -4px -4px 9px var(--light)}
+  .msg.show{display:block}
+  .msg.err{color:#b23a22}
+  .info{padding:36px}
+  .info h3{font-size:1.5rem;margin-bottom:16px}
+  .info ul{list-style:none;margin-bottom:20px}
+  .info li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;color:var(--muted)}
+  .info li b{color:var(--ink);font-weight:700}
+  .info p{color:var(--muted)}
+
+  footer{padding:44px 0 56px;color:var(--muted)}
+  .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+
+  @media (max-width:900px){
+    .hero-grid,.book-grid{grid-template-columns:1fr}
+    .hero-img{max-width:460px}
+    .values{grid-template-columns:1fr}
+    .gallery{grid-template-columns:repeat(2,1fr)}
+    .shot:nth-child(3){display:none}
+    .nav-links{display:none}
+  }
+  @media (max-width:620px){
+    section{padding:64px 0}
+    .menu{grid-template-columns:1fr}
+    .row{grid-template-columns:1fr}
+    .book,.info{padding:26px}
+    .gallery{gap:18px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none!important}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav aria-label="Principal">
+      <a href="#inicio" class="logo"><i aria-hidden="true"></i>Hoja y Brasa</a>
+      <ul class="nav-links">
+        <li><a href="#menu">Menú</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#reservas">Reservas</a></li>
+      </ul>
+      <a href="#reservas" class="btn">Reservar mesa</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Comida fresca, hecha con calma</h1>
+        <p>Ingredientes de temporada, recetas sencillas y una mesa lista para ti. Mira el menú y reserva en un minuto.</p>
+        <div class="hero-cta">
+          <a href="#reservas" class="btn">Reservar mesa</a>
+          <a href="#menu" class="btn btn-soft">Ver menú</a>
+        </div>
+      </div>
+      <div class="hero-img clay">
+        <div class="pic">
+          <span aria-hidden="true">🍝</span>
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80" alt="Plato servido en el restaurante" onerror="this.style.display='none'">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="values">
+        <article class="clay value"><div class="ball" aria-hidden="true">🌿</div><h3>Ingredientes frescos</h3><p>Verduras y hierbas de productores cercanos, cada semana.</p></article>
+        <article class="clay value"><div class="ball" aria-hidden="true">🔥</div><h3>Cocina a la brasa</h3><p>Fuego lento para sacar el mejor sabor de cada plato.</p></article>
+        <article class="clay value"><div class="ball" aria-hidden="true">🍰</div><h3>Postres caseros</h3><p>Preparados cada mañana en nuestra propia cocina.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu">
+    <div class="wrap">
+      <h2 class="sec-title">Nuestro menú</h2>
+      <p class="sec-sub">Elige una categoría para ver los platos.</p>
+      <div class="tabs" role="group" aria-label="Categorías del menú">
+        <button class="tab" data-cat="entradas" aria-pressed="true">Entradas</button>
+        <button class="tab" data-cat="fuertes" aria-pressed="false">Platos fuertes</button>
+        <button class="tab" data-cat="postres" aria-pressed="false">Postres</button>
+        <button class="tab" data-cat="bebidas" aria-pressed="false">Bebidas</button>
+      </div>
+      <div class="menu" id="menuList">
+        <article class="clay dish" data-cat="entradas"><div><h3>Bruschetta de tomate</h3><p>Pan tostado, tomate, albahaca y aceite de oliva.</p></div><span class="price">$6</span></article>
+        <article class="clay dish" data-cat="entradas"><div><h3>Crema de calabaza</h3><p>Suave, con semillas tostadas y un toque de crema.</p></div><span class="price">$7</span></article>
+        <article class="clay dish" data-cat="entradas"><div><h3>Ensalada de la casa</h3><p>Hojas verdes, queso fresco, nueces y vinagreta ligera.</p></div><span class="price">$8</span></article>
+        <article class="clay dish" data-cat="entradas"><div><h3>Croquetas caseras</h3><p>Cuatro piezas con salsa de la casa.</p></div><span class="price">$7</span></article>
+
+        <article class="clay dish" data-cat="fuertes" hidden><div><h3>Pasta al pesto</h3><p>Pasta fresca, pesto de albahaca y queso parmesano.</p></div><span class="price">$13</span></article>
+        <article class="clay dish" data-cat="fuertes" hidden><div><h3>Pollo a la brasa</h3><p>Con papas rústicas y verduras asadas.</p></div><span class="price">$15</span></article>
+        <article class="clay dish" data-cat="fuertes" hidden><div><h3>Filete de res</h3><p>Corte jugoso con puré y salsa de pimienta.</p></div><span class="price">$19</span></article>
+        <article class="clay dish" data-cat="fuertes" hidden><div><h3>Risotto de hongos</h3><p>Arroz cremoso con hongos salteados y queso.</p></div><span class="price">$14</span></article>
+
+        <article class="clay dish" data-cat="postres" hidden><div><h3>Flan de vainilla</h3><p>Con caramelo casero.</p></div><span class="price">$5</span></article>
+        <article class="clay dish" data-cat="postres" hidden><div><h3>Tarta de queso</h3><p>Cremosa, con salsa de frutos rojos.</p></div><span class="price">$6</span></article>
+        <article class="clay dish" data-cat="postres" hidden><div><h3>Brownie con helado</h3><p>Chocolate tibio y helado de vainilla.</p></div><span class="price">$6</span></article>
+        <article class="clay dish" data-cat="postres" hidden><div><h3>Fruta de temporada</h3><p>Fresca, con miel y yogur.</p></div><span class="price">$5</span></article>
+
+        <article class="clay dish" data-cat="bebidas" hidden><div><h3>Limonada con menta</h3><p>Natural, servida bien fría.</p></div><span class="price">$3</span></article>
+        <article class="clay dish" data-cat="bebidas" hidden><div><h3>Jugo del día</h3><p>Fruta fresca, sin azúcar añadida.</p></div><span class="price">$3</span></article>
+        <article class="clay dish" data-cat="bebidas" hidden><div><h3>Café de la casa</h3><p>Americano, espresso o con leche.</p></div><span class="price">$2.50</span></article>
+        <article class="clay dish" data-cat="bebidas" hidden><div><h3>Té helado</h3><p>Té negro con limón y un toque de miel.</p></div><span class="price">$3</span></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeria">
+    <div class="wrap">
+      <h2 class="sec-title">Del plato a tu mesa</h2>
+      <p class="sec-sub">Un vistazo a lo que sale de nuestra cocina.</p>
+      <div class="gallery">
+        <div class="clay shot"><div class="pic"><span aria-hidden="true">🥗</span><img loading="lazy" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=700&q=80" alt="Ensalada fresca" onerror="this.style.display='none'"></div></div>
+        <div class="clay shot"><div class="pic"><span aria-hidden="true">🍕</span><img loading="lazy" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=700&q=80" alt="Pizza recién horneada" onerror="this.style.display='none'"></div></div>
+        <div class="clay shot"><div class="pic"><span aria-hidden="true">🍰</span><img loading="lazy" src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=700&q=80" alt="Postre de la casa" onerror="this.style.display='none'"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reservas">
+    <div class="wrap">
+      <h2 class="sec-title">Reserva tu mesa</h2>
+      <p class="sec-sub">Cuéntanos cuándo vienes y te confirmamos por teléfono.</p>
+      <div class="book-grid">
+        <form class="clay book" id="formReserva" novalidate>
+          <div class="row">
+            <div class="field"><label for="nombre">Nombre</label><input id="nombre" type="text" placeholder="Tu nombre" autocomplete="name" required></div>
+            <div class="field"><label for="tel">Teléfono</label><input id="tel" type="tel" placeholder="0000-0000" autocomplete="tel" required></div>
+          </div>
+          <div class="row">
+            <div class="field"><label for="fecha">Fecha</label><input id="fecha" type="date" required></div>
+            <div class="field"><label for="hora">Hora</label>
+              <select id="hora" required>
+                <option value="">Elige una hora</option>
+                <option>12:00</option><option>13:00</option><option>14:00</option><option>15:00</option>
+                <option>18:00</option><option>19:00</option><option>20:00</option><option>21:00</option>
+              </select>
+            </div>
+          </div>
+          <div class="field"><label for="personas">Personas</label>
+            <select id="personas">
+              <option>1 persona</option><option>2 personas</option><option>3 personas</option><option>4 personas</option>
+              <option>5 personas</option><option>6 o más</option>
+            </select>
+          </div>
+          <button class="btn" type="submit">Confirmar reserva</button>
+          <div class="msg" id="msg" role="status" aria-live="polite"></div>
+        </form>
+
+        <aside class="clay info">
+          <h3>Horarios</h3>
+          <ul>
+            <li>Martes a viernes <b>12:00 – 22:00</b></li>
+            <li>Sábado y domingo <b>11:00 – 23:00</b></li>
+            <li>Lunes <b>Cerrado</b></li>
+          </ul>
+          <p>Calle del Huerto 12, Centro<br>Tel. 0000-0000</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Hoja y Brasa. Todos los derechos reservados.</span>
+    <span>Instagram · Facebook · WhatsApp</span>
+  </div>
+</footer>
+
+<script>
+  // Menú por categorías
+  const tabs = document.querySelectorAll('.tab');
+  const dishes = document.querySelectorAll('.dish');
+  tabs.forEach(t => t.addEventListener('click', () => {
+    tabs.forEach(x => x.setAttribute('aria-pressed', x === t ? 'true' : 'false'));
+    dishes.forEach(d => d.hidden = d.dataset.cat !== t.dataset.cat);
+  }));
+
+  // Reserva
+  const fecha = document.getElementById('fecha');
+  const msg = document.getElementById('msg');
+  const hoy = new Date();
+  fecha.min = new Date(hoy.getTime() - hoy.getTimezoneOffset()*60000).toISOString().split('T')[0];
+
+  function mostrar(texto, error){
+    msg.textContent = texto;
+    msg.className = 'msg show' + (error ? ' err' : '');
+  }
+
+  document.getElementById('formReserva').addEventListener('submit', e => {
+    e.preventDefault();
+    const nombre = document.getElementById('nombre').value.trim();
+    const tel = document.getElementById('tel').value.trim();
+    const hora = document.getElementById('hora').value;
+    const personas = document.getElementById('personas').value;
+    if(!nombre || !tel || !fecha.value || !hora){
+      mostrar('Completa nombre, teléfono, fecha y hora para reservar.', true);
+      return;
+    }
+    mostrar(`Listo, ${nombre}. Mesa para ${personas.toLowerCase()} el ${fecha.value} a las ${hora}. Te llamaremos al ${tel} para confirmar.`);
+    e.target.reset();
+  });
+</script>
+</body>
+</html>

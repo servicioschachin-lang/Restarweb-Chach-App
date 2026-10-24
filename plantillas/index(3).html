@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mamma Dolce — Pizza y postres | Landing Claymorfismo</title>
+<meta name="description" content="Mamma Dolce — Pizza y postres. Sitio de demostración de restaurante en estilo Claymorfismo.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={important:true,corePlugins:{preflight:false,container:false,visibility:false},theme:{extend:{colors:{bg:'var(--bg)',ink:'var(--ink)',brand:'var(--brand)',brand2:'var(--brand2)',mute:'var(--mute)'},fontFamily:{display:['var(--fd)'],body:['var(--fb)']}}}}</script>
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--fb);background:var(--bg);color:var(--ink);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--fd);font-weight:var(--fw,500);line-height:1.08;margin:0;overflow-wrap:break-word}
+p{margin:0}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+.sec{position:relative;padding:6rem 0;scroll-margin-top:70px}
+.hero{position:relative;overflow:hidden;padding:9rem 0 5rem}
+.hero-bg{min-height:100vh;display:flex;align-items:center;background:var(--ov),var(--img) center/cover no-repeat var(--bg)}
+.page-hero{position:relative;padding:10rem 0 5rem;background:var(--ov),var(--img) center/cover no-repeat var(--bg)}
+.cta-band{position:relative;padding:7rem 0;background:var(--ov),var(--img) center/cover no-repeat var(--bg)}
+@media(max-width:767px){.sec{padding:4rem 0}.cta-band{padding:4.5rem 0}.hero{padding-top:7.5rem}}
+.btn-main,.btn-ghost{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;cursor:pointer;transition:.25s;font-family:var(--fb);border:0}
+.price{font-family:var(--fd);white-space:nowrap}
+.leader{flex:1;border-bottom:2px dotted currentColor;opacity:.3;transform:translateY(-4px);min-width:12px}
+.media{overflow:hidden}.media img{transition:transform .6s}.media:hover img,.dish:hover img{transform:scale(1.05)}
+.dish-img{overflow:hidden}
+.icon-btn{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;transition:.25s;font-size:1.05rem}
+.field{display:block;width:100%;font:inherit;color:var(--ink);outline:0;transition:.25s}
+.mthumb{width:76px;height:76px;flex:none;overflow:hidden;border-radius:var(--tr,16px)}
+.mitem{padding:1rem}
+.avatar{width:76px;height:76px;margin:0 auto;border-radius:50%;display:grid;place-items:center;font-family:var(--fd);font-size:1.5rem}
+.chip{cursor:pointer;border:0;font-family:var(--fb);transition:.25s}
+.deco{display:none;position:absolute;pointer-events:none}
+.hero-media{position:relative}
+.page{display:none}.page.active{display:block;animation:pf .45s ease}
+@keyframes pf{from{opacity:0;transform:translateY(10px)}}
+.hamb{width:46px;height:46px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;padding:0;border:0;background:transparent;border-radius:12px}
+.hamb span{display:block;width:24px;height:2px;background:var(--navink);border-radius:2px;transition:.3s}
+.hamb[aria-expanded=true] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.hamb[aria-expanded=true] span:nth-child(2){opacity:0}
+.hamb[aria-expanded=true] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+.navbar-toggler:focus{box-shadow:none}
+.nav-x{padding:.8rem 0;transition:.3s;z-index:1030}
+.nav-x .navbar-nav .nav-link{color:var(--navink)!important;font-weight:500;padding:.6rem .9rem!important;transition:.2s}
+.nav-x .navbar-nav .nav-link:hover,.nav-x .navbar-nav .nav-link.active{color:var(--brand)!important}
+.brand{font-family:var(--fd);font-size:1.7rem;line-height:1;display:flex;flex-direction:column;color:var(--navink)}
+.brand small{font:500 .62rem var(--fb);letter-spacing:.16em;margin-top:.3rem;opacity:.7}
+@media(max-width:991px){.nav-x .navbar-collapse{padding:1rem 0 .6rem}.nav-x .btn-main{width:100%}}
+.footer{padding:4.5rem 0 2rem;position:relative}
+.footer .brand{color:var(--ink)}.footer a:hover{color:var(--brand)}
+.foot-bottom{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--mute)}
+.ticker{overflow:hidden;white-space:nowrap}.ticker div{display:inline-block;animation:tk 26s linear infinite}
+@keyframes tk{to{transform:translateX(-50%)}}
+.accordion{--bs-accordion-bg:transparent;--bs-accordion-color:var(--ink);--bs-accordion-border-color:var(--line);--bs-accordion-btn-color:var(--ink);--bs-accordion-btn-bg:transparent;--bs-accordion-active-bg:transparent;--bs-accordion-active-color:var(--brand);--bs-accordion-btn-focus-box-shadow:none;--bs-accordion-border-radius:0;--bs-accordion-inner-border-radius:0}
+.accordion-button{font-family:var(--fd);font-size:1.15rem;box-shadow:none!important}
+.accordion-button::after{filter:var(--icof,none)}
+.toast.panel{background-color:var(--bg)}
+:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+:root{--bg:#fff0e0;--ink:#4b2e2b;--mute:#86665e;--brand:#ff6b6b;--brand2:#ffc93c;--fd:'Fredoka',sans-serif;--fb:'Nunito',sans-serif;--fw:600;--r:34px;--line:#f3d9c4;--navink:#4b2e2b;--tr:50%;--cs:rgba(214,120,82,.28);--ov:linear-gradient(rgba(255,107,107,.25),rgba(100,40,50,.55))}
+body{background:radial-gradient(40rem 30rem at 0 0,#ffe0d2,transparent 60%),radial-gradient(40rem 30rem at 100% 40%,#e2f6ea,transparent 60%),var(--bg);background-attachment:fixed}
+.panel{background:#fff;border-radius:var(--r);box-shadow:12px 16px 30px var(--cs),inset -8px -10px 18px rgba(0,0,0,.05),inset 8px 10px 18px rgba(255,255,255,.95);transition:transform .3s}
+.panel:hover{transform:translateY(-5px)}
+.feat:nth-child(3n+2),.dish:nth-child(3n+2),.tcard:nth-child(3n+2){background:#fff6cf}
+.feat:nth-child(3n+3),.dish:nth-child(3n+3),.tcard:nth-child(3n+3){background:#e3f7ec}
+.btn-main,.btn-ghost{padding:.95rem 2rem;border-radius:999px;font-weight:800}
+.btn-main{color:#fff;background:var(--brand);box-shadow:8px 10px 20px rgba(255,107,107,.45),inset -5px -7px 12px rgba(0,0,0,.16),inset 5px 7px 12px rgba(255,255,255,.45)}
+.btn-ghost{color:var(--ink);background:var(--brand2);box-shadow:8px 10px 20px rgba(255,201,60,.5),inset -5px -7px 12px rgba(0,0,0,.1),inset 5px 7px 12px rgba(255,255,255,.6)}
+.btn-main:hover,.btn-ghost:hover{transform:translateY(-3px) scale(1.03)}
+.kicker{display:inline-block;padding:.3rem 1rem;border-radius:999px;background:#fff;color:var(--brand);font-weight:800;font-size:.85rem;box-shadow:4px 6px 12px var(--cs),inset -3px -3px 6px rgba(0,0,0,.05),inset 3px 3px 6px #fff}
+.title{font-size:clamp(2.2rem,4.6vw,3.4rem)}
+.ico{width:66px;height:66px;border-radius:24px;display:grid;place-items:center;font-size:1.7rem;color:#fff;background:var(--brand);box-shadow:6px 8px 16px rgba(255,107,107,.4),inset -4px -5px 9px rgba(0,0,0,.15),inset 4px 5px 9px rgba(255,255,255,.4)}
+.feat:nth-child(3n+2) .ico{background:#ffb703;box-shadow:6px 8px 16px rgba(255,183,3,.4),inset -4px -5px 9px rgba(0,0,0,.12),inset 4px 5px 9px rgba(255,255,255,.5)}
+.feat:nth-child(3n+3) .ico{background:#38c793;box-shadow:6px 8px 16px rgba(56,199,147,.4),inset -4px -5px 9px rgba(0,0,0,.15),inset 4px 5px 9px rgba(255,255,255,.4)}
+.stat{color:var(--brand);font-family:var(--fd);font-size:1.9rem}
+.field{padding:1rem 1.3rem;border:0;border-radius:22px;background:#fff7ee;box-shadow:inset 5px 6px 12px rgba(214,120,82,.2),inset -4px -4px 8px #fff}
+.field::placeholder{color:#b99a8f}
+.media{border-radius:42px;border:8px solid #fff;box-shadow:12px 16px 30px var(--cs)}
+.hero-media .media{border-radius:46% 54% 50% 50%/55% 45% 55% 45%}
+.icon-btn{color:#fff;background:var(--brand);box-shadow:5px 7px 14px rgba(255,107,107,.4),inset -3px -4px 8px rgba(0,0,0,.15),inset 3px 4px 8px rgba(255,255,255,.4)}
+.icon-btn:nth-child(3n+2){background:#ffb703}.icon-btn:nth-child(3n+3){background:#38c793}
+.icon-btn:hover{transform:translateY(-4px) scale(1.08)}
+.chip{padding:.6rem 1.3rem;border-radius:999px;font-weight:800;background:#fff;color:var(--ink);box-shadow:5px 7px 14px var(--cs),inset -3px -4px 8px rgba(0,0,0,.05),inset 3px 4px 8px #fff}
+.chip.active{background:var(--brand);color:#fff}
+.nav-x{top:.75rem;left:.75rem;right:.75rem;background:#fff;border-radius:34px;box-shadow:10px 14px 28px var(--cs),inset -4px -6px 12px rgba(0,0,0,.04),inset 4px 6px 12px #fff}
+.hamb{background:var(--brand2);box-shadow:3px 5px 10px rgba(255,201,60,.5),inset -3px -4px 7px rgba(0,0,0,.1),inset 3px 4px 7px rgba(255,255,255,.6);border-radius:50%}
+.avatar{background:var(--brand);color:#fff;box-shadow:6px 8px 16px rgba(255,107,107,.4),inset -4px -5px 9px rgba(0,0,0,.15),inset 4px 5px 9px rgba(255,255,255,.4)}
+.footer{background:#fff;border-radius:48px 48px 0 0;box-shadow:0 -12px 30px var(--cs)}
+.deco{display:block;border-radius:50%;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.6),var(--c) 60%);box-shadow:inset -10px -14px 24px rgba(0,0,0,.12),12px 16px 30px var(--cs)}
+.d1{--c:#ff6b6b;width:90px;height:90px;top:18%;left:5%}.d2{--c:#ffc93c;width:60px;height:60px;bottom:10%;right:44%}.d3{--c:#38c793;width:120px;height:120px;top:11%;right:3%}
+@media(max-width:767px){.deco{opacity:.35}}
+.mitem{padding:1rem 1.3rem}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg nav-x fixed-top" aria-label="Principal"><div class="container">
+<a class="brand" href="#inicio" data-nav>Mamma Dolce<small>Pizza y postres</small></a>
+<button class="navbar-toggler hamb" type="button" data-bs-toggle="collapse" data-bs-target="#mnu" aria-controls="mnu" aria-expanded="false" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+<div class="collapse navbar-collapse" id="mnu"><ul class="navbar-nav ms-auto align-items-lg-center"><li class="nav-item"><a class="nav-link" href="#inicio" data-nav>Inicio</a></li><li class="nav-item"><a class="nav-link" href="#menu" data-nav>Menú</a></li><li class="nav-item"><a class="nav-link" href="#nosotros" data-nav>Nosotros</a></li><li class="nav-item"><a class="nav-link" href="#galeria" data-nav>Galería</a></li><li class="nav-item"><a class="nav-link" href="#reservas" data-nav>Reservas</a></li></ul><a href="#reservas" class="btn-main ms-lg-3 mt-3 mt-lg-0" data-nav>Reservar</a></div>
+</div></nav><main><section id="inicio" class="hero" style="padding-top:9.5rem"><span class="deco d1"></span><span class="deco d2"></span><span class="deco d3"></span><div class="container relative z-10 grid md:grid-cols-2 gap-14 items-center">
+<div class="md:order-2"><span class="kicker">Pizza, pasta y dulces</span><h1 class="text-4xl sm:text-5xl md:text-7xl mt-5">Hecho con masa, cariño y mucho queso</h1><p class="mt-6 text-lg text-mute max-w-xl">Pizzas al horno de leña, pastas caseras y postres de colores para compartir con quien más quieres.</p><div class="flex flex-wrap gap-4 mt-8"><a href="#reservas" class="btn-main" data-nav>Reservar mesa</a><a href="#menu" class="btn-ghost" data-nav>Ver el menú</a></div>
+<div class="mt-10 flex items-center gap-3 text-mute"><span class="text-brand"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></span><span class="text-sm">4.9 · más de 2.000 reseñas</span></div></div>
+<div class="hero-media"><div class="media aspect-square"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&amp;fit=crop&amp;w=1000&amp;q=70" alt="Plato destacado" loading="lazy" class="w-full h-full object-cover"></div>
+<div class="panel absolute -bottom-4 left-2 px-5 py-3 flex items-center gap-3"><i class="bi bi-clock text-brand text-xl"></i><span class="text-sm">Abierto hoy hasta las 22:00</span></div></div></div></section><section class="sec"><div class="container"><div class="grid md:grid-cols-3 gap-6 md:gap-8"><div class="panel feat p-8"><div class="ico"><i class="bi bi-fire"></i></div><h3 class="text-2xl mt-6">Horno de leña</h3><p class="mt-3 text-mute">Masa madre con 48 horas de fermentación.</p></div><div class="panel feat p-8"><div class="ico"><i class="bi bi-emoji-smile"></i></div><h3 class="text-2xl mt-6">Ambiente familiar</h3><p class="mt-3 text-mute">Un lugar pensado para compartir con los tuyos.</p></div><div class="panel feat p-8"><div class="ico"><i class="bi bi-gift"></i></div><h3 class="text-2xl mt-6">Dulces caseros</h3><p class="mt-3 text-mute">Postres horneados cada mañana.</p></div></div></div></section><section id="nosotros" class="sec"><div class="container grid md:grid-cols-2 gap-14 items-center">
+<div><div class="media aspect-[4/5]"><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&amp;fit=crop&amp;w=1000&amp;q=70" alt="Nuestro restaurante" loading="lazy" class="w-full h-full object-cover"></div></div>
+<div><span class="kicker">Nuestra cocina</span><h2 class="title mt-4">Una casa llena de color y buen comer</h2><p class="mt-5 text-mute">En Mamma Dolce cocinamos con producto fresco, técnica cuidada y mucho cariño. Nuestro equipo recibe a cada invitado como en casa.</p><p class="mt-4 text-mute">Cada plato nace de recetas que hemos perfeccionado con el tiempo, pensadas para compartir, celebrar y volver una y otra vez.</p>
+<div class="grid grid-cols-3 gap-4 mt-8"><div class="panel p-4 text-center"><div class="stat">10+</div><div class="text-sm text-mute">Años de historia</div></div><div class="panel p-4 text-center"><div class="stat">35</div><div class="text-sm text-mute">Platos de autor</div></div><div class="panel p-4 text-center"><div class="stat">4.9</div><div class="text-sm text-mute">Valoración media</div></div></div></div></div></section><section id="menu" class="sec sec-alt"><div class="container"><div class="text-center mx-auto max-w-2xl mb-12"><span class="kicker">Favoritos de la casa</span><h2 class="title mt-4">Platos que no pueden faltar</h2><p class="mt-4 text-mute">Una selección de lo más pedido por nuestros invitados.</p></div><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"><article class="panel dish overflow-hidden"><div class="dish-img aspect-[4/3]"><img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="Margherita" loading="lazy" class="w-full h-full object-cover"></div>
+<div class="p-6"><div class="flex justify-between items-start gap-3"><h3 class="text-xl">Margherita</h3><span class="price text-lg text-brand">$11</span></div><p class="mt-2 text-sm text-mute">Tomate, mozzarella fresca y albahaca</p></div></article><article class="panel dish overflow-hidden"><div class="dish-img aspect-[4/3]"><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="Pepperoni" loading="lazy" class="w-full h-full object-cover"></div>
+<div class="p-6"><div class="flex justify-between items-start gap-3"><h3 class="text-xl">Pepperoni</h3><span class="price text-lg text-brand">$13</span></div><p class="mt-2 text-sm text-mute">Doble pepperoni y queso gratinado</p></div></article><article class="panel dish overflow-hidden"><div class="dish-img aspect-[4/3]"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="Cuatro quesos" loading="lazy" class="w-full h-full object-cover"></div>
+<div class="p-6"><div class="flex justify-between items-start gap-3"><h3 class="text-xl">Cuatro quesos</h3><span class="price text-lg text-brand">$14</span></div><p class="mt-2 text-sm text-mute">Mozzarella, gorgonzola, parmesano y provolone</p></div></article><article class="panel dish overflow-hidden"><div class="dish-img aspect-[4/3]"><img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="Fettuccine Alfredo" loading="lazy" class="w-full h-full object-cover"></div>
+<div class="p-6"><div class="flex justify-between items-start gap-3"><h3 class="text-xl">Fettuccine Alfredo</h3><span class="price text-lg text-brand">$12</span></div><p class="mt-2 text-sm text-mute">Crema, parmesano y pimienta negra</p></div></article><article class="panel dish overflow-hidden"><div class="dish-img aspect-[4/3]"><img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="Donas glaseadas" loading="lazy" class="w-full h-full object-cover"></div>
+<div class="p-6"><div class="flex justify-between items-start gap-3"><h3 class="text-xl">Donas glaseadas</h3><span class="price text-lg text-brand">$7</span></div><p class="mt-2 text-sm text-mute">Cuatro piezas con toppings de colores</p></div></article><article class="panel dish overflow-hidden"><div class="dish-img aspect-[4/3]"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="Pastel de chocolate" loading="lazy" class="w-full h-full object-cover"></div>
+<div class="p-6"><div class="flex justify-between items-start gap-3"><h3 class="text-xl">Pastel de chocolate</h3><span class="price text-lg text-brand">$8</span></div><p class="mt-2 text-sm text-mute">Tres capas con ganache cremoso</p></div></article></div></div></section><section class="cta-band" style="--img:url(https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&amp;fit=crop&amp;w=1800&amp;q=70)"><div class="container relative z-10"><div class="panel p-10 md:p-16 text-center max-w-3xl mx-auto">
+<span class="kicker">¡Te esperamos!</span><h2 class="title mt-4">Ven a comer con nosotros</h2><p class="mt-4 text-mute max-w-lg mx-auto">Elige día y hora, nosotros nos encargamos del resto. Te confirmamos en minutos.</p>
+<a href="#reservas" class="btn-main mt-8" data-nav>Reservar ahora</a></div></div></section><section id="galeria" class="sec"><div class="container"><div class="text-center mx-auto max-w-2xl mb-12"><span class="kicker">Galería</span><h2 class="title mt-4">Sabores y momentos</h2><p class="mt-4 text-mute">Un vistazo a nuestra cocina y nuestro salón.</p></div><div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 auto-rows-[170px] md:auto-rows-[230px]"><div class="media h-full col-span-2 row-span-2 md:col-span-1 md:row-span-2"><img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&amp;fit=crop&amp;w=900&amp;q=70" alt="Galería del restaurante" loading="lazy" class="w-full h-full object-cover"></div><div class="media h-full "><img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&amp;fit=crop&amp;w=900&amp;q=70" alt="Galería del restaurante" loading="lazy" class="w-full h-full object-cover"></div><div class="media h-full "><img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&amp;fit=crop&amp;w=900&amp;q=70" alt="Galería del restaurante" loading="lazy" class="w-full h-full object-cover"></div><div class="media h-full "><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&amp;fit=crop&amp;w=900&amp;q=70" alt="Galería del restaurante" loading="lazy" class="w-full h-full object-cover"></div><div class="media h-full "><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&amp;fit=crop&amp;w=900&amp;q=70" alt="Galería del restaurante" loading="lazy" class="w-full h-full object-cover"></div><div class="media h-full col-span-2 md:col-span-3"><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&amp;fit=crop&amp;w=900&amp;q=70" alt="Galería del restaurante" loading="lazy" class="w-full h-full object-cover"></div></div></div></section><section class="sec"><div class="container"><div class="text-center mx-auto max-w-2xl mb-12"><span class="kicker">Opiniones</span><h2 class="title mt-4">Lo que dicen nuestros invitados</h2></div><div class="grid md:grid-cols-3 gap-6 md:gap-8"><figure class="panel tcard p-8 m-0"><div class="text-brand mb-4"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div><blockquote class="m-0 text-mute">“Todo estuvo delicioso y el servicio fue impecable. Volveremos pronto.”</blockquote><figcaption class="mt-5 font-semibold">Laura M.</figcaption></figure><figure class="panel tcard p-8 m-0"><div class="text-brand mb-4"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div><blockquote class="m-0 text-mute">“Un lugar con mucha personalidad. Los platos llegaron perfectos y a tiempo.”</blockquote><figcaption class="mt-5 font-semibold">Carlos R.</figcaption></figure><figure class="panel tcard p-8 m-0"><div class="text-brand mb-4"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div><blockquote class="m-0 text-mute">“Ideal para una cena especial. Reservar fue rápido y sencillo.”</blockquote><figcaption class="mt-5 font-semibold">Andrea P.</figcaption></figure></div></div></section><section id="reservas" class="sec"><div class="container"><div class="text-center mx-auto max-w-2xl mb-12"><span class="kicker">Reservas y contacto</span><h2 class="title mt-4">Tu mesa está lista</h2><p class="mt-4 text-mute">Completa el formulario y te confirmamos por correo.</p></div><div class="grid lg:grid-cols-5 gap-6 md:gap-8"><div class="panel p-8 lg:col-span-2"><h3 class="text-2xl">Visítanos</h3><ul class="mt-6 p-0 list-none grid gap-5 text-mute">
+<li class="flex gap-4"><i class="bi bi-geo-alt text-brand text-xl"></i><span>Calle Principal 123, Centro<br>Ciudad, País</span></li>
+<li class="flex gap-4"><i class="bi bi-clock text-brand text-xl"></i><span>Lun–Jue: 12:00 a 22:00<br>Vie–Sáb: 12:00 a 00:00<br>Dom: 12:00 a 20:00</span></li>
+<li class="flex gap-4"><i class="bi bi-telephone text-brand text-xl"></i><span>+00 123 456 789</span></li>
+<li class="flex gap-4"><i class="bi bi-envelope text-brand text-xl"></i><span>hola@mammadolce.com</span></li></ul><div class="mt-7"><div class="flex flex-wrap gap-3"><a href="#" class="icon-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a href="#" class="icon-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a href="#" class="icon-btn" aria-label="TikTok"><i class="bi bi-tiktok"></i></a><a href="#" class="icon-btn" aria-label="X"><i class="bi bi-twitter-x"></i></a><a href="#" class="icon-btn" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a><a href="#" class="icon-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a></div></div></div><form data-demo class="panel p-6 md:p-10 grid sm:grid-cols-2 gap-4 lg:col-span-3">
+<h3 class="text-2xl sm:col-span-2">Reserva tu mesa</h3>
+<input class="field" required placeholder="Nombre completo" aria-label="Nombre completo">
+<input class="field" type="email" required placeholder="Correo electrónico" aria-label="Correo electrónico">
+<input class="field" type="tel" placeholder="Teléfono" aria-label="Teléfono">
+<select class="field" aria-label="Personas"><option>1 persona</option><option>2 personas</option><option>3 personas</option><option>4 personas</option><option>5 personas</option><option>6 personas</option><option>7 personas</option><option>8 personas</option></select>
+<input class="field" type="date" required aria-label="Fecha">
+<input class="field" type="time" required aria-label="Hora">
+<textarea class="field sm:col-span-2" rows="3" placeholder="Alergias o comentarios" aria-label="Comentarios"></textarea>
+<button class="btn-main sm:col-span-2" type="submit">Confirmar reserva</button></form></div></div></section></main><footer class="footer"><div class="container"><div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+<div><a href="#inicio" class="brand" data-nav>Mamma Dolce<small>Pizza y postres</small></a><p class="mt-5 text-mute text-sm">Cocina honesta, producto fresco y un ambiente pensado para disfrutar sin prisa.</p></div>
+<div><h4 class="text-lg mb-4">Explora</h4><ul class="p-0 list-none grid gap-2 text-mute"><li><a href="#inicio" data-nav>Inicio</a></li><li><a href="#menu" data-nav>Menú</a></li><li><a href="#nosotros" data-nav>Nosotros</a></li><li><a href="#galeria" data-nav>Galería</a></li><li><a href="#reservas" data-nav>Reservas</a></li></ul></div>
+<div><h4 class="text-lg mb-4">Horarios</h4><ul class="p-0 list-none grid gap-2 text-mute"><li>Lun–Jue: 12:00 a 22:00</li><li>Vie–Sáb: 12:00 a 00:00</li><li>Dom: 12:00 a 20:00</li></ul></div>
+<div><h4 class="text-lg mb-4">Síguenos</h4><div class="flex flex-wrap gap-3"><a href="#" class="icon-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a href="#" class="icon-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a href="#" class="icon-btn" aria-label="TikTok"><i class="bi bi-tiktok"></i></a><a href="#" class="icon-btn" aria-label="X"><i class="bi bi-twitter-x"></i></a><a href="#" class="icon-btn" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a><a href="#" class="icon-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a></div><form data-demo class="mt-5 flex gap-2"><input class="field" type="email" placeholder="Tu correo" required aria-label="Correo"><button class="btn-main" type="submit" aria-label="Suscribirme"><i class="bi bi-send"></i></button></form></div>
+</div><div class="foot-bottom flex flex-wrap justify-between gap-2"><span>© 2026 Mamma Dolce. Todos los derechos reservados.</span><span>Sitio de demostración · Imágenes de Unsplash</span></div></div></footer><div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index:2000"><div id="tst" class="toast panel" role="status" aria-live="polite" data-bs-delay="4000"><div class="p-4 flex items-center gap-3"><i class="bi bi-check-circle-fill text-brand text-xl"></i><div><strong>¡Solicitud enviada!</strong><div class="text-sm text-mute">Te contactaremos pronto (demo).</div></div></div></div></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+(function(){
+document.documentElement.classList.add('js');
+var nav=document.querySelector('.nav-x'),mnu=document.getElementById('mnu');
+function onS(){nav.classList.toggle('scrolled',window.scrollY>30)}onS();addEventListener('scroll',onS,{passive:true});
+mnu.addEventListener('show.bs.collapse',function(){nav.classList.add('open')});
+mnu.addEventListener('hidden.bs.collapse',function(){nav.classList.remove('open')});
+document.querySelectorAll('[data-nav]').forEach(function(a){a.addEventListener('click',function(){if(mnu.classList.contains('show'))bootstrap.Collapse.getOrCreateInstance(mnu).hide()})});
+document.querySelectorAll('form[data-demo]').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();bootstrap.Toast.getOrCreateInstance(document.getElementById('tst')).show();f.reset()})});
+document.querySelectorAll('img').forEach(function(im,i){function fb(){if(im.dataset.f)return;im.dataset.f=1;im.src='https://picsum.photos/seed/rest'+i+'/900/700'}im.addEventListener('error',fb);if(im.complete&&im.naturalWidth===0)fb()});
+
+})();
+</script>
+</body>
+</html>

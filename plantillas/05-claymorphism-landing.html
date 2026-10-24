@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mamma Pizza · Claymorfismo · Landing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root{--bg:#ffe9f1;--ink:#4a2336;--red:#ff5d6c;--yellow:#ffd23f;--blue:#6cc6ff;--mint:#7fe3b8}
+  html{scroll-padding-top:90px}
+  body{background:var(--bg);color:var(--ink);font-family:'Nunito',sans-serif}
+  h1,h2,h3,.brand{font-family:'Baloo 2',sans-serif;font-weight:800;line-height:1.05}
+  .clay{border-radius:36px;box-shadow:14px 14px 28px rgba(160,70,100,.28),inset -8px -8px 16px rgba(0,0,0,.08),inset 8px 8px 16px rgba(255,255,255,.75)}
+  .clay-sm{border-radius:22px;box-shadow:7px 7px 14px rgba(160,70,100,.28),inset -4px -4px 8px rgba(0,0,0,.08),inset 4px 4px 8px rgba(255,255,255,.7)}
+  .c-white{background:#fff6fa}.c-red{background:var(--red);color:#fff}.c-yellow{background:var(--yellow)}.c-blue{background:var(--blue)}.c-mint{background:var(--mint)}
+  .btn{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 1.8rem;font-family:'Baloo 2';font-weight:700;font-size:1.1rem;border-radius:999px;transition:transform .2s,box-shadow .2s;box-shadow:7px 7px 14px rgba(160,70,100,.3),inset -4px -4px 8px rgba(0,0,0,.12),inset 4px 4px 8px rgba(255,255,255,.6)}
+  .btn:hover{transform:translateY(-3px) scale(1.03)}
+  .btn:active{transform:translateY(1px);box-shadow:3px 3px 6px rgba(160,70,100,.3),inset 4px 4px 8px rgba(0,0,0,.15)}
+  .field{width:100%;padding:.95rem 1.2rem;border-radius:22px;background:#fff;color:var(--ink);box-shadow:inset 5px 5px 10px rgba(160,70,100,.2),inset -5px -5px 10px #fff}
+  .blobimg{border-radius:58% 42% 55% 45% / 48% 55% 45% 52%;object-fit:cover;background:#ffc9d9}
+  .bgimg{background-size:cover;background-position:center;position:relative;overflow:hidden}
+  .bgimg::before{content:"";position:absolute;inset:0;background:rgba(74,35,54,.55)}
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:4px solid var(--blue);outline-offset:3px}
+  @media (prefers-reduced-motion:no-preference){.float{animation:float 5s ease-in-out infinite}@keyframes float{50%{transform:translateY(-10px) rotate(2deg)}}}
+</style>
+</head>
+<body>
+
+<header class="sticky top-0 z-50 p-3">
+  <nav class="clay c-white max-w-6xl mx-auto px-5 py-3 flex items-center justify-between !rounded-full">
+    <a href="#inicio" class="brand text-2xl text-[color:var(--red)]"><i class="fa-solid fa-pizza-slice mr-2"></i>Mamma Pizza</a>
+    <div class="hidden md:flex items-center gap-6 font-extrabold">
+      <a href="#menu" class="hover:text-[color:var(--red)]">Menú</a>
+      <a href="#horno" class="hover:text-[color:var(--red)]">Horno</a>
+      <a href="#combos" class="hover:text-[color:var(--red)]">Combos</a>
+      <a href="#pedir" class="btn c-red !py-2">Pedir ahora</a>
+    </div>
+    <button id="burger" class="md:hidden w-11 h-11 clay-sm c-yellow grid place-items-center" aria-label="Abrir menú" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+  </nav>
+  <div id="mobile" class="hidden md:hidden max-w-6xl mx-auto mt-3 clay c-white p-5">
+    <div class="flex flex-col gap-3 text-xl font-extrabold brand">
+      <a href="#menu">Menú</a><a href="#horno">Horno</a><a href="#combos">Combos</a><a href="#pedir">Pedir ahora</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section id="inicio" class="px-4 pt-8 pb-16">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+    <div>
+      <span class="clay-sm c-yellow inline-block px-4 py-1.5 font-extrabold text-sm mb-5">🍕 Masa de 48 horas</span>
+      <h1 class="text-5xl sm:text-7xl">Pizza gordita, feliz y recién horneada.</h1>
+      <p class="mt-5 text-lg opacity-80 max-w-lg">Tomate dulce, mozzarella fresca y bordes crujientes. Texto genérico para presentar tu pizzería.</p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="#pedir" class="btn c-red">Pedir ahora</a>
+        <a href="#menu" class="btn c-blue">Ver menú</a>
+      </div>
+    </div>
+    <div class="relative">
+      <div class="clay c-yellow p-4 rotate-2"><img data-u="1565299624946-b28f40a0ae38" alt="Pizza con queso derretido" class="blobimg w-full h-80 md:h-[26rem] float"></div>
+      <div class="clay-sm c-mint absolute -bottom-4 -left-2 px-5 py-3 font-extrabold brand text-xl -rotate-3">Desde $9</div>
+    </div>
+  </div>
+</section>
+
+<!-- MENÚ -->
+<section id="menu" class="px-4 py-16">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl sm:text-5xl mb-10 text-center">Nuestras favoritas</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <article class="clay c-white p-4"><img data-u="1565299624946-b28f40a0ae38" alt="Pizza margarita" class="clay-sm w-full h-48 object-cover bg-pink-200"><div class="p-3 pt-4"><div class="flex justify-between items-start"><h3 class="text-2xl">Margarita</h3><span class="clay-sm c-yellow px-3 py-1 font-extrabold">$9</span></div><p class="opacity-75 mt-1">Tomate, mozzarella y albahaca.</p></div></article>
+      <article class="clay c-white p-4"><img data-u="1513104890138-7c749659a591" alt="Pizza de pepperoni" class="clay-sm w-full h-48 object-cover bg-pink-200"><div class="p-3 pt-4"><div class="flex justify-between items-start"><h3 class="text-2xl">Pepperoni</h3><span class="clay-sm c-yellow px-3 py-1 font-extrabold">$11</span></div><p class="opacity-75 mt-1">Doble pepperoni y orégano.</p></div></article>
+      <article class="clay c-white p-4"><img data-u="1473093295043-cdd812d0e601" alt="Pasta con salsa" class="clay-sm w-full h-48 object-cover bg-pink-200"><div class="p-3 pt-4"><div class="flex justify-between items-start"><h3 class="text-2xl">Pasta pomodoro</h3><span class="clay-sm c-yellow px-3 py-1 font-extrabold">$10</span></div><p class="opacity-75 mt-1">Spaghetti, tomate y parmesano.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- HORNO (sección con imagen de fondo) -->
+<section id="horno" class="px-4 py-12">
+  <div class="max-w-6xl mx-auto clay bgimg text-white p-8 sm:p-14" data-u="1555396273-367ea4eb4db5">
+    <div class="relative grid md:grid-cols-3 gap-6 items-center">
+      <div class="md:col-span-1"><h2 class="text-4xl sm:text-5xl">Del horno de leña a tu mesa</h2></div>
+      <div class="md:col-span-2 grid sm:grid-cols-3 gap-4 text-ink" style="color:var(--ink)">
+        <div class="clay-sm c-white p-5 text-center"><i class="fa-solid fa-fire text-3xl text-[color:var(--red)]"></i><p class="font-extrabold mt-2">450 °C</p><p class="text-sm opacity-75">90 segundos</p></div>
+        <div class="clay-sm c-white p-5 text-center"><i class="fa-solid fa-wheat-awn text-3xl text-[color:var(--red)]"></i><p class="font-extrabold mt-2">Masa madre</p><p class="text-sm opacity-75">48 h de reposo</p></div>
+        <div class="clay-sm c-white p-5 text-center"><i class="fa-solid fa-cheese text-3xl text-[color:var(--red)]"></i><p class="font-extrabold mt-2">Queso fresco</p><p class="text-sm opacity-75">Cada mañana</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMBOS -->
+<section id="combos" class="px-4 py-16">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl sm:text-5xl mb-10 text-center">Combos para compartir</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="clay c-blue p-7 text-center"><h3 class="text-3xl">Duo</h3><p class="mt-2">1 pizza mediana + 2 bebidas</p><p class="brand text-5xl mt-4">$14</p></div>
+      <div class="clay c-yellow p-7 text-center scale-105"><h3 class="text-3xl">Familiar</h3><p class="mt-2">2 pizzas grandes + pan de ajo + 4 bebidas</p><p class="brand text-5xl mt-4">$32</p></div>
+      <div class="clay c-mint p-7 text-center"><h3 class="text-3xl">Fiesta</h3><p class="mt-2">3 pizzas + pasta + postre</p><p class="brand text-5xl mt-4">$48</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PEDIR -->
+<section id="pedir" class="px-4 py-16">
+  <div class="max-w-3xl mx-auto clay c-red p-8 sm:p-12">
+    <h2 class="text-4xl sm:text-5xl">¿Hambre? Pide ahora</h2>
+    <p class="mt-2 text-white/90">Te llamamos para confirmar. Entrega en 35 minutos.</p>
+    <form class="mt-8 grid sm:grid-cols-2 gap-4">
+      <input class="field" placeholder="Nombre" aria-label="Nombre" required>
+      <input class="field" type="tel" placeholder="Teléfono" aria-label="Teléfono" required>
+      <input class="field sm:col-span-2" placeholder="Dirección de entrega" aria-label="Dirección" required>
+      <select class="field sm:col-span-2" aria-label="Pedido"><option>Combo Duo</option><option>Combo Familiar</option><option>Combo Fiesta</option><option>Armar mi pedido</option></select>
+      <button class="btn c-yellow sm:col-span-2 justify-center" style="color:var(--ink)">Enviar pedido</button>
+      <p data-ok hidden class="sm:col-span-2 text-center font-extrabold">¡Gracias! Recibimos tu pedido.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="px-4 pb-10 pt-6">
+  <div class="max-w-6xl mx-auto clay c-white p-7 flex flex-col md:flex-row gap-6 items-center justify-between text-center md:text-left">
+    <div><p class="brand text-3xl text-[color:var(--red)]">Mamma Pizza</p><p class="text-sm opacity-75">Calle Napoli 10 · Todos los días 12:00–23:00</p></div>
+    <div class="flex gap-3">
+      <a href="#" aria-label="Instagram" class="clay-sm c-red w-12 h-12 grid place-items-center text-white"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" aria-label="Facebook" class="clay-sm c-blue w-12 h-12 grid place-items-center"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#" aria-label="TikTok" class="clay-sm c-yellow w-12 h-12 grid place-items-center"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="#" aria-label="WhatsApp" class="clay-sm c-mint w-12 h-12 grid place-items-center"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+  <p class="text-center text-xs opacity-60 mt-5">© 2026 Mamma Pizza · Plantilla de ejemplo</p>
+</footer>
+
+<script>
+  document.querySelectorAll('[data-u]').forEach(e=>{const u='https://images.unsplash.com/photo-'+e.dataset.u+'?auto=format&fit=crop&w=1400&q=70';e.tagName==='IMG'?e.src=u:e.style.backgroundImage='url('+u+')'});
+  const b=document.getElementById('burger'),m=document.getElementById('mobile');
+  b.onclick=()=>{const o=m.classList.toggle('hidden');b.setAttribute('aria-expanded',!o);b.innerHTML=o?'<i class="fa-solid fa-bars"></i>':'<i class="fa-solid fa-xmark"></i>'};
+  m.querySelectorAll('a').forEach(a=>a.onclick=()=>{m.classList.add('hidden');b.innerHTML='<i class="fa-solid fa-bars"></i>'});
+  document.querySelectorAll('form').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();f.querySelector('[data-ok]').hidden=false}));
+</script>
+</body>
+</html>

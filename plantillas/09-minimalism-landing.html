@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kōri · Minimalismo · Landing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root{--ink:#222;--mute:#767676;--line:#e6e6e6;--red:#c8372d}
+  html{scroll-padding-top:80px}
+  body{background:#fff;color:var(--ink);font-family:'Jost',sans-serif;font-weight:300;font-size:1.05rem;line-height:1.7}
+  h1,h2,h3,.serif{font-family:'Shippori Mincho',serif;font-weight:500;letter-spacing:.01em}
+  .line{border-color:var(--line)}
+  .btn{display:inline-block;padding:.85rem 2.2rem;border:1px solid var(--ink);font-weight:400;letter-spacing:.04em;transition:background .25s,color .25s}
+  .btn:hover{background:var(--ink);color:#fff}
+  .btn-solid{background:var(--ink);color:#fff}
+  .btn-solid:hover{background:var(--red);border-color:var(--red)}
+  .field{width:100%;border:0;border-bottom:1px solid var(--ink);padding:.8rem 0;background:transparent;font-weight:300;border-radius:0}
+  .field:focus{outline:none;border-bottom-color:var(--red)}
+  .bgimg{background-size:cover;background-position:center;position:relative}
+  .bgimg::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.42)}
+  .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--red)}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset:4px}
+  img{background:#efefef}
+</style>
+</head>
+<body>
+
+<header class="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur border-b line">
+  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="#inicio" class="serif text-2xl flex items-center gap-2">Kōri <span class="dot"></span></a>
+    <div class="hidden md:flex items-center gap-10 text-[.95rem]">
+      <a href="#filosofia" class="hover:text-[color:var(--red)]">Filosofía</a>
+      <a href="#menu" class="hover:text-[color:var(--red)]">Menú</a>
+      <a href="#visita" class="hover:text-[color:var(--red)]">Visita</a>
+      <a href="#reservar" class="btn !py-2 !px-5 text-sm">Reservar</a>
+    </div>
+    <button id="burger" class="md:hidden w-10 h-10 grid place-items-center" aria-label="Abrir menú" aria-expanded="false"><i class="fa-solid fa-bars text-lg"></i></button>
+  </nav>
+  <div id="mobile" class="hidden md:hidden bg-white border-t line">
+    <div class="px-6 py-4 flex flex-col gap-4 serif text-xl">
+      <a href="#filosofia">Filosofía</a><a href="#menu">Menú</a><a href="#visita">Visita</a><a href="#reservar">Reservar</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section id="inicio" class="pt-16">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center min-h-[88vh] py-12">
+    <div>
+      <h1 class="text-5xl sm:text-6xl leading-[1.15]">Un solo plato.<br>Bien pensado.</h1>
+      <p class="mt-6 text-[color:var(--mute)] max-w-sm">Cocina japonesa de ocho asientos. Pescado de temporada, arroz y silencio. Texto genérico para tu restaurante.</p>
+      <div class="mt-10 flex flex-wrap gap-4"><a href="#reservar" class="btn btn-solid">Reservar</a><a href="#menu" class="btn">Ver menú</a></div>
+    </div>
+    <img data-u="1579871494447-9811cf80d66c" alt="Sushi sobre plato blanco" class="w-full h-[48vh] md:h-[68vh] object-cover">
+  </div>
+</section>
+
+<!-- FILOSOFÍA -->
+<section id="filosofia" class="border-t line">
+  <div class="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-12 gap-10">
+    <h2 class="md:col-span-5 text-3xl sm:text-4xl leading-snug">Menos ingredientes, más atención a cada uno.</h2>
+    <div class="md:col-span-6 md:col-start-7 space-y-5 text-[color:var(--mute)]">
+      <p>Cocinamos una sola cena por noche, para pocas personas. Texto genérico para explicar la idea del restaurante, su origen y su forma de trabajar.</p>
+      <p>Compramos poco, a pocos proveedores, y usamos todo. Lo demás sobra.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BANDA CON IMAGEN DE FONDO -->
+<section class="bgimg text-white" data-u="1559339352-11d035aa65de">
+  <div class="relative max-w-6xl mx-auto px-6 py-32 sm:py-44">
+    <p class="serif text-3xl sm:text-5xl max-w-2xl leading-snug">Ocho asientos, una barra de madera y nada que distraiga.</p>
+  </div>
+</section>
+
+<!-- MENÚ -->
+<section id="menu" class="border-b line">
+  <div class="max-w-4xl mx-auto px-6 py-24">
+    <h2 class="text-3xl sm:text-4xl mb-12">Menú de la noche</h2>
+    <ul class="divide-y line border-y line" style="--tw-divide-opacity:1">
+      <li class="py-6 flex justify-between gap-6 border-[color:var(--line)]"><div><h3 class="text-xl">Omakase corto</h3><p class="text-[color:var(--mute)] text-sm">Siete piezas y sopa miso.</p></div><span class="serif text-xl">$38</span></li>
+      <li class="py-6 flex justify-between gap-6 border-[color:var(--line)]"><div><h3 class="text-xl">Omakase completo</h3><p class="text-[color:var(--mute)] text-sm">Doce piezas, plato caliente y postre.</p></div><span class="serif text-xl">$64</span></li>
+      <li class="py-6 flex justify-between gap-6 border-[color:var(--line)]"><div><h3 class="text-xl">Chirashi</h3><p class="text-[color:var(--mute)] text-sm">Arroz de sushi con pescado del día.</p></div><span class="serif text-xl">$24</span></li>
+      <li class="py-6 flex justify-between gap-6 border-[color:var(--line)]"><div><h3 class="text-xl">Té y mochi</h3><p class="text-[color:var(--mute)] text-sm">Sencha y mochi de temporada.</p></div><span class="serif text-xl">$8</span></li>
+    </ul>
+    <div class="grid grid-cols-2 gap-4 mt-12">
+      <img data-u="1467003909585-2f8a72700288" alt="Salmón fresco" class="w-full h-56 object-cover">
+      <img data-u="1512621776951-a57141f2eefd" alt="Bowl de arroz y verduras" class="w-full h-56 object-cover">
+    </div>
+  </div>
+</section>
+
+<!-- VISITA -->
+<section id="visita" class="border-b line">
+  <div class="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-3 gap-10 text-[color:var(--mute)]">
+    <div><h3 class="serif text-xl text-[color:var(--ink)] mb-2">Dirección</h3><p>Calle del Agua 4<br>Barrio Antiguo</p></div>
+    <div><h3 class="serif text-xl text-[color:var(--ink)] mb-2">Horario</h3><p>Martes a sábado<br>19:00 y 21:30</p></div>
+    <div><h3 class="serif text-xl text-[color:var(--ink)] mb-2">Contacto</h3><p>+00 123 456 789<br>hola@kori.example</p></div>
+  </div>
+</section>
+
+<!-- RESERVAR -->
+<section id="reservar">
+  <div class="max-w-xl mx-auto px-6 py-24">
+    <h2 class="text-3xl sm:text-4xl">Reservar</h2>
+    <p class="mt-3 text-[color:var(--mute)]">Escribe tus datos y te confirmamos por correo.</p>
+    <form class="mt-10 grid gap-6">
+      <input class="field" placeholder="Nombre" aria-label="Nombre" required>
+      <input class="field" type="email" placeholder="Correo" aria-label="Correo" required>
+      <div class="grid grid-cols-2 gap-6"><input class="field" type="date" aria-label="Fecha" required><select class="field" aria-label="Personas"><option>1 persona</option><option>2 personas</option><option>3 personas</option><option>4 personas</option></select></div>
+      <button class="btn btn-solid mt-2">Enviar solicitud</button>
+      <p data-ok hidden class="text-[color:var(--red)]">Gracias. Recibimos tu solicitud.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="border-t line">
+  <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-[color:var(--mute)]">
+    <span>© 2026 Kōri · Plantilla de ejemplo</span>
+    <div class="flex gap-6 text-lg text-[color:var(--ink)]">
+      <a href="#" aria-label="Instagram" class="hover:text-[color:var(--red)]"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" aria-label="Facebook" class="hover:text-[color:var(--red)]"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#" aria-label="TikTok" class="hover:text-[color:var(--red)]"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="#" aria-label="WhatsApp" class="hover:text-[color:var(--red)]"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('[data-u]').forEach(e=>{const u='https://images.unsplash.com/photo-'+e.dataset.u+'?auto=format&fit=crop&w=1400&q=70';e.tagName==='IMG'?e.src=u:e.style.backgroundImage='url('+u+')'});
+  const b=document.getElementById('burger'),m=document.getElementById('mobile');
+  b.onclick=()=>{const o=m.classList.toggle('hidden');b.setAttribute('aria-expanded',!o);b.innerHTML=o?'<i class="fa-solid fa-bars text-lg"></i>':'<i class="fa-solid fa-xmark text-lg"></i>'};
+  m.querySelectorAll('a').forEach(a=>a.onclick=()=>{m.classList.add('hidden');b.innerHTML='<i class="fa-solid fa-bars text-lg"></i>'});
+  document.querySelectorAll('form').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();f.querySelector('[data-ok]').hidden=false}));
+</script>
+</body>
+</html>

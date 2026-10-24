@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atelier Nord · Minimalismo · Multipágina</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  :root{--bg:#f4f6f5;--ink:#2b2f2d;--mute:#737b77;--sage:#4f6b5c;--line:#d9dfdc}
+  body{background:var(--bg);color:var(--ink);font-family:'Hanken Grotesk',sans-serif;font-weight:400;line-height:1.7}
+  h1,h2,h3,h4,.serif{font-family:'Instrument Serif',serif;font-weight:400;letter-spacing:-.01em}
+  .navbar{background:var(--bg);border-bottom:1px solid var(--line);padding:1.1rem 0}
+  .navbar-brand{font-family:'Instrument Serif';font-size:1.8rem;color:var(--ink)!important}
+  .nav-link{color:var(--mute)!important;font-size:.98rem;padding:.4rem 1rem!important}
+  .nav-link:hover,.nav-link.on{color:var(--ink)!important;text-decoration:underline;text-underline-offset:8px;text-decoration-thickness:1px}
+  .navbar-toggler{border:1px solid var(--ink);border-radius:0;padding:.35rem .7rem;color:var(--ink)}
+  .navbar-toggler:focus{box-shadow:0 0 0 3px rgba(79,107,92,.4)}
+  .btn-min{border:1px solid var(--ink);border-radius:0;padding:.8rem 2rem;background:transparent;color:var(--ink);transition:background .25s,color .25s}
+  .btn-min:hover{background:var(--ink);color:var(--bg)}
+  .btn-sage{background:var(--sage);border-color:var(--sage);color:#fff}
+  .btn-sage:hover{background:var(--ink);border-color:var(--ink);color:#fff}
+  .form-control,.form-select{border:0;border-bottom:1px solid var(--ink);border-radius:0;background:transparent;padding:.8rem 0;font-weight:300}
+  .form-control:focus,.form-select:focus{background:transparent;box-shadow:none;border-bottom-color:var(--sage)}
+  .page{display:none;padding-bottom:5rem}.page.active{display:block}
+  .hairline{border-top:1px solid var(--line)}
+  .item{display:flex;justify-content:space-between;gap:1.5rem;padding:1.1rem 0;border-bottom:1px solid var(--line)}
+  .item small{display:block;color:var(--mute)}
+  .cover{background-size:cover;background-position:center;position:relative;color:#fff}
+  .cover::before{content:"";position:absolute;inset:0;background:rgba(20,28,24,.45)}
+  .cover>*{position:relative}
+  img.ph{width:100%;object-fit:cover;background:#e3e8e5}
+  .soc{color:var(--ink);font-size:1.15rem;text-decoration:none}
+  .soc:hover{color:var(--sage)}
+  .text-mute{color:var(--mute)}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--sage);outline-offset:4px}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#inicio">Atelier Nord</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Abrir menú"><i class="fa-solid fa-bars"></i></button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto py-3 py-lg-0">
+        <li class="nav-item"><a class="nav-link" data-link="inicio" href="#inicio">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" data-link="menu" href="#menu">Menú</a></li>
+        <li class="nav-item"><a class="nav-link" data-link="nosotros" href="#nosotros">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" data-link="reservas" href="#reservas">Reservas</a></li>
+        <li class="nav-item"><a class="nav-link" data-link="contacto" href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- INICIO -->
+<section class="page" id="inicio">
+  <div class="cover" data-u="1414235077428-338989a2e8c0" style="min-height:78vh;display:flex;align-items:flex-end">
+    <div class="container pb-5">
+      <h1 class="display-2" style="max-width:760px;line-height:1.05">Cocina nórdica, servida con calma.</h1>
+      <p class="fs-5 mt-3 mb-4" style="max-width:480px;font-weight:300">Productos de temporada, pocos ingredientes y mucha luz. Texto genérico para tu restaurante.</p>
+      <div class="d-flex flex-wrap gap-3"><a href="#reservas" class="btn btn-min btn-sage">Reservar mesa</a><a href="#menu" class="btn btn-min" style="color:#fff;border-color:#fff">Ver menú</a></div>
+    </div>
+  </div>
+  <div class="container py-5 my-lg-4">
+    <div class="row g-5">
+      <div class="col-md-4"><h2 class="h3">Temporada</h2><p class="text-mute mb-0">La carta cambia cada seis semanas según lo que llega de las granjas cercanas.</p></div>
+      <div class="col-md-4"><h2 class="h3">Fermentos</h2><p class="text-mute mb-0">Panes, encurtidos y mantequillas hechos en casa.</p></div>
+      <div class="col-md-4"><h2 class="h3">Vinos naturales</h2><p class="text-mute mb-0">Una lista corta de productores pequeños.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MENÚ -->
+<section class="page" id="menu">
+  <div class="container pt-5">
+    <h1 class="display-3">Menú</h1>
+    <p class="text-mute mb-5">Carta de otoño. Cambia cada seis semanas.</p>
+    <div class="row g-5">
+      <div class="col-lg-7">
+        <h2 class="h2 mb-2">Platos</h2>
+        <div class="item"><div>Remolacha asada<small>Queso fresco, eneldo, avellana</small></div><span class="serif fs-4">12</span></div>
+        <div class="item"><div>Sopa de coliflor<small>Aceite de hierbas, pan de centeno</small></div><span class="serif fs-4">10</span></div>
+        <div class="item"><div>Bacalao al vapor<small>Puerro, mantequilla tostada</small></div><span class="serif fs-4">26</span></div>
+        <div class="item"><div>Pato curado<small>Manzana, apio, jugo reducido</small></div><span class="serif fs-4">29</span></div>
+        <div class="item"><div>Tarta de manzana<small>Crema agria, canela</small></div><span class="serif fs-4">9</span></div>
+      </div>
+      <div class="col-lg-5">
+        <img class="ph mb-4" style="height:320px" data-u="1476224203421-9ac39bcb3327" alt="Plato de temporada">
+        <h2 class="h2 mb-2">Bebidas</h2>
+        <div class="item"><span>Café filtrado</span><span class="serif fs-5">4</span></div>
+        <div class="item"><span>Té de la casa</span><span class="serif fs-5">4</span></div>
+        <div class="item"><span>Vino por copa</span><span class="serif fs-5">8</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section class="page" id="nosotros">
+  <div class="container pt-5">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-6"><img class="ph" style="height:480px" data-u="1550966871-3ed3cdb5ed0c" alt="Interior del restaurante"></div>
+      <div class="col-lg-5 offset-lg-1">
+        <h1 class="display-4" style="line-height:1.1">Un comedor pequeño con una idea clara</h1>
+        <p class="text-mute mt-4">Atelier Nord abrió con veinte asientos y una cocina abierta. Texto genérico: cuenta aquí quiénes sois, de dónde vienen los productos y cómo trabajáis.</p>
+        <p class="text-mute">Cocinamos lo justo, compramos cerca y dejamos que cada ingrediente se note.</p>
+      </div>
+    </div>
+    <div class="row g-4 mt-5 pt-4 hairline text-center text-md-start">
+      <div class="col-4"><div class="serif display-5">8</div><div class="text-mute">años abiertos</div></div>
+      <div class="col-4"><div class="serif display-5">20</div><div class="text-mute">asientos</div></div>
+      <div class="col-4"><div class="serif display-5">12</div><div class="text-mute">granjas aliadas</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESERVAS -->
+<section class="page" id="reservas">
+  <div class="container pt-5"><div class="row justify-content-center"><div class="col-lg-6">
+    <h1 class="display-3">Reservas</h1>
+    <p class="text-mute">Abrimos de miércoles a domingo. Te respondemos en el día.</p>
+    <form class="row g-4 mt-3">
+      <div class="col-md-6"><input class="form-control" placeholder="Nombre" aria-label="Nombre" required></div>
+      <div class="col-md-6"><input class="form-control" type="email" placeholder="Correo" aria-label="Correo" required></div>
+      <div class="col-md-4"><input class="form-control" type="date" aria-label="Fecha" required></div>
+      <div class="col-md-4"><input class="form-control" type="time" aria-label="Hora" required></div>
+      <div class="col-md-4"><select class="form-select" aria-label="Personas"><option>2 personas</option><option>3 personas</option><option>4 personas</option><option>5 o más</option></select></div>
+      <div class="col-12 pt-2"><button class="btn btn-min btn-sage">Enviar solicitud</button></div>
+      <p data-ok hidden style="color:var(--sage)">Gracias. Recibimos tu solicitud.</p>
+    </form>
+  </div></div></div>
+</section>
+
+<!-- CONTACTO -->
+<section class="page" id="contacto">
+  <div class="container pt-5">
+    <div class="row g-5">
+      <div class="col-lg-5">
+        <h1 class="display-3">Contacto</h1>
+        <ul class="list-unstyled mt-4 d-grid gap-3 text-mute">
+          <li><i class="fa-solid fa-location-dot me-3" style="color:var(--sage)"></i>Gran Vía Norte 12, Centro</li>
+          <li><i class="fa-solid fa-phone me-3" style="color:var(--sage)"></i>+00 123 456 789</li>
+          <li><i class="fa-solid fa-envelope me-3" style="color:var(--sage)"></i>hola@ateliernord.example</li>
+          <li><i class="fa-solid fa-clock me-3" style="color:var(--sage)"></i>Mié–Dom · 12:30–22:30</li>
+        </ul>
+        <div class="d-flex gap-4 mt-4">
+          <a class="soc" href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a class="soc" href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a class="soc" href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a class="soc" href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-6 offset-lg-1">
+        <h2 class="h2">Escríbenos</h2>
+        <form class="d-grid gap-4 mt-3">
+          <input class="form-control" placeholder="Nombre" aria-label="Nombre" required>
+          <input class="form-control" type="email" placeholder="Correo" aria-label="Correo" required>
+          <textarea class="form-control" rows="4" placeholder="Mensaje" aria-label="Mensaje" required></textarea>
+          <div><button class="btn btn-min btn-sage">Enviar mensaje</button></div>
+          <p data-ok hidden style="color:var(--sage)">Mensaje enviado.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="hairline">
+  <div class="container py-4 d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 small text-mute">
+    <span>© 2026 Atelier Nord · Plantilla de ejemplo</span>
+    <span class="d-flex gap-4"><a class="soc" href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a class="soc" href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a class="soc" href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></span>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.querySelectorAll('[data-u]').forEach(e=>{const u='https://images.unsplash.com/photo-'+e.dataset.u+'?auto=format&fit=crop&w=1400&q=70';e.tagName==='IMG'?e.src=u:e.style.backgroundImage='url('+u+')'});
+  const pages=[...document.querySelectorAll('.page')],nav=document.getElementById('nav');
+  function go(){const id=(location.hash||'#inicio').slice(1),t=pages.find(p=>p.id===id)||pages[0];
+    pages.forEach(p=>p.classList.toggle('active',p===t));
+    document.querySelectorAll('[data-link]').forEach(a=>a.classList.toggle('on',a.dataset.link===t.id));
+    bootstrap.Collapse.getInstance(nav)?.hide();scrollTo(0,0)}
+  addEventListener('hashchange',go);go();
+  document.querySelectorAll('form').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();f.querySelector('[data-ok]').hidden=false}));
+</script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Café Aurora · Neumorfismo · Landing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800&family=Lora:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  :root{--bg:#e4e9f0;--txt:#3b4252;--sh-d:#c3c9d4;--sh-l:#ffffff;--acc:#f0a030}
+  html{scroll-behavior:smooth;scroll-padding-top:90px}
+  body{background:var(--bg);color:var(--txt);font-family:'Outfit',sans-serif}
+  h1,h2,h3,.serif{font-family:'Lora',serif;font-weight:500}
+  .raised{background:var(--bg);border-radius:28px;box-shadow:10px 10px 22px var(--sh-d),-10px -10px 22px var(--sh-l)}
+  .raised-sm{background:var(--bg);border-radius:16px;box-shadow:6px 6px 12px var(--sh-d),-6px -6px 12px var(--sh-l)}
+  .pressed{background:var(--bg);border-radius:16px;box-shadow:inset 6px 6px 12px var(--sh-d),inset -6px -6px 12px var(--sh-l)}
+  .navbar{background:var(--bg);box-shadow:0 8px 18px var(--sh-d)}
+  .navbar-brand{font-family:'Lora',serif;font-size:1.6rem;color:var(--txt)}
+  .nav-link{color:var(--txt);font-weight:500;padding:.5rem 1rem!important;border-radius:12px}
+  .nav-link:hover{box-shadow:inset 3px 3px 6px var(--sh-d),inset -3px -3px 6px var(--sh-l)}
+  .navbar-toggler{border:0;border-radius:14px;box-shadow:5px 5px 10px var(--sh-d),-5px -5px 10px var(--sh-l);color:var(--txt)}
+  .navbar-toggler:focus{box-shadow:inset 4px 4px 8px var(--sh-d),inset -4px -4px 8px var(--sh-l)}
+  .btn-neu{background:var(--bg);color:var(--txt);border:0;border-radius:16px;padding:.85rem 1.7rem;font-weight:700;box-shadow:7px 7px 14px var(--sh-d),-7px -7px 14px var(--sh-l);transition:box-shadow .2s}
+  .btn-neu:hover,.btn-neu:focus{color:var(--txt);box-shadow:inset 5px 5px 10px var(--sh-d),inset -5px -5px 10px var(--sh-l)}
+  .btn-acc{color:#3a2400;background:linear-gradient(145deg,#f7b04a,#e8932a)}
+  .btn-acc:hover{color:#3a2400}
+  .form-control,.form-select{background:var(--bg);border:0;border-radius:16px;padding:.9rem 1.1rem;color:var(--txt);box-shadow:inset 6px 6px 12px var(--sh-d),inset -6px -6px 12px var(--sh-l)}
+  .form-control:focus,.form-select:focus{background:var(--bg);color:var(--txt);box-shadow:inset 6px 6px 12px var(--sh-d),inset -6px -6px 12px var(--sh-l),0 0 0 3px rgba(240,160,48,.5)}
+  .circle-img{width:min(100%,430px);aspect-ratio:1;border-radius:50%;padding:18px;margin-inline:auto}
+  .circle-img img{width:100%;height:100%;border-radius:50%;object-fit:cover;box-shadow:inset 0 0 0 0 #000;background:#cfd6e0}
+  .ico{width:60px;height:60px;border-radius:50%;display:grid;place-items:center;color:var(--acc);font-size:1.4rem}
+  .soc{width:48px;height:48px;border-radius:50%;display:inline-grid;place-items:center;color:var(--txt);text-decoration:none;box-shadow:5px 5px 10px var(--sh-d),-5px -5px 10px var(--sh-l)}
+  .soc:hover{color:var(--acc);box-shadow:inset 4px 4px 8px var(--sh-d),inset -4px -4px 8px var(--sh-l)}
+  .price{font-weight:800;color:#c47a12}
+  .thumb{height:190px;width:100%;object-fit:cover;border-radius:20px;background:#cfd6e0}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg sticky-top py-3">
+  <div class="container">
+    <a class="navbar-brand" href="#inicio"><i class="fa-solid fa-mug-hot me-2" style="color:var(--acc)"></i>Café Aurora</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Abrir menú"><i class="fa-solid fa-bars"></i></button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto gap-lg-1 pt-3 pt-lg-0">
+        <li class="nav-item"><a class="nav-link" href="#menu">Menú</a></li>
+        <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" href="#horarios">Horarios</a></li>
+        <li class="nav-item"><a class="nav-link" href="#reservas">Reservas</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main>
+<!-- HERO -->
+<section id="inicio" class="py-5">
+  <div class="container py-lg-4">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6 order-2 order-lg-1">
+        <p class="pressed d-inline-block px-3 py-2 small mb-4"><i class="fa-regular fa-sun me-2" style="color:var(--acc)"></i>Desayunos y brunch todo el día</p>
+        <h1 class="display-3 lh-1">Un buen día empieza con una mesa tranquila.</h1>
+        <p class="fs-5 mt-4 opacity-75">Pan recién horneado, café de especialidad y platos suaves, hechos al momento. Texto genérico para presentar tu cafetería.</p>
+        <div class="d-flex flex-wrap gap-3 mt-4">
+          <a href="#reservas" class="btn btn-neu btn-acc">Reservar mesa</a>
+          <a href="#menu" class="btn btn-neu">Ver menú</a>
+        </div>
+      </div>
+      <div class="col-lg-6 order-1 order-lg-2">
+        <div class="circle-img raised"><img data-u="1482049016688-2d3e1b311543" alt="Tostada con huevo y aguacate"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFICIOS -->
+<section class="py-5">
+  <div class="container"><div class="row g-4">
+    <div class="col-md-4"><div class="raised p-4 h-100 text-center"><div class="ico raised-sm mx-auto mb-3"><i class="fa-solid fa-bread-slice"></i></div><h3 class="h4">Horno propio</h3><p class="opacity-75 mb-0">Panes y bollería cada mañana.</p></div></div>
+    <div class="col-md-4"><div class="raised p-4 h-100 text-center"><div class="ico raised-sm mx-auto mb-3"><i class="fa-solid fa-mug-saucer"></i></div><h3 class="h4">Café de origen</h3><p class="opacity-75 mb-0">Granos tostados en pequeños lotes.</p></div></div>
+    <div class="col-md-4"><div class="raised p-4 h-100 text-center"><div class="ico raised-sm mx-auto mb-3"><i class="fa-solid fa-seedling"></i></div><h3 class="h4">Ingredientes frescos</h3><p class="opacity-75 mb-0">Huevos y frutas de productores locales.</p></div></div>
+  </div></div>
+</section>
+
+<!-- MENÚ -->
+<section id="menu" class="py-5">
+  <div class="container">
+    <h2 class="display-5 mb-2">Nuestro menú</h2>
+    <p class="opacity-75 mb-5">Platos simples, porciones generosas.</p>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3"><article class="raised p-3 h-100"><img class="thumb" data-u="1567620905732-2d1ec7ab7445" alt="Panqueques"><div class="p-2 pt-3"><h3 class="h5">Panqueques</h3><p class="small opacity-75">Miel, frutos rojos y mantequilla.</p><span class="price">$9</span></div></article></div>
+      <div class="col-md-6 col-lg-3"><article class="raised p-3 h-100"><img class="thumb" data-u="1509440159596-0249088772ff" alt="Pan artesanal"><div class="p-2 pt-3"><h3 class="h5">Tostada rústica</h3><p class="small opacity-75">Pan de masa madre con aguacate.</p><span class="price">$8</span></div></article></div>
+      <div class="col-md-6 col-lg-3"><article class="raised p-3 h-100"><img class="thumb" data-u="1495474472287-4d71bcdd2085" alt="Taza de café"><div class="p-2 pt-3"><h3 class="h5">Flat white</h3><p class="small opacity-75">Doble espresso y leche cremosa.</p><span class="price">$4</span></div></article></div>
+      <div class="col-md-6 col-lg-3"><article class="raised p-3 h-100"><img class="thumb" data-u="1512621776951-a57141f2eefd" alt="Bowl de frutas y granola"><div class="p-2 pt-3"><h3 class="h5">Bowl de granola</h3><p class="small opacity-75">Yogur, frutas y semillas.</p><span class="price">$7</span></div></article></div>
+    </div>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section id="nosotros" class="py-5">
+  <div class="container">
+    <div class="raised p-4 p-lg-5"><div class="row align-items-center g-4">
+      <div class="col-lg-5"><img class="thumb" style="height:320px" data-u="1550966871-3ed3cdb5ed0c" alt="Interior de la cafetería"></div>
+      <div class="col-lg-7">
+        <h2 class="display-6">Un lugar para quedarse un rato</h2>
+        <p class="opacity-75 mt-3">Abrimos Café Aurora para tener un rincón donde nadie tiene prisa. Aquí va tu historia: quiénes son, qué cocinan y por qué. Texto genérico de ejemplo.</p>
+        <div class="row g-3 mt-2 text-center">
+          <div class="col-4"><div class="pressed py-3"><b class="fs-3">7</b><div class="small">años</div></div></div>
+          <div class="col-4"><div class="pressed py-3"><b class="fs-3">24</b><div class="small">platos</div></div></div>
+          <div class="col-4"><div class="pressed py-3"><b class="fs-3">4.9</b><div class="small">reseñas</div></div></div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+</section>
+
+<!-- HORARIOS -->
+<section id="horarios" class="py-5">
+  <div class="container"><div class="row g-4">
+    <div class="col-md-6"><div class="raised p-4 h-100"><h3 class="h4 mb-3"><i class="fa-regular fa-clock me-2" style="color:var(--acc)"></i>Horarios</h3>
+      <div class="pressed p-3 mb-3 d-flex justify-content-between"><span>Lunes a viernes</span><b>07:00 – 18:00</b></div>
+      <div class="pressed p-3 d-flex justify-content-between"><span>Sábado y domingo</span><b>08:00 – 20:00</b></div></div></div>
+    <div class="col-md-6"><div class="raised p-4 h-100"><h3 class="h4 mb-3"><i class="fa-solid fa-location-dot me-2" style="color:var(--acc)"></i>Dónde estamos</h3>
+      <p class="opacity-75">Calle de la Aurora 21, Barrio Viejo.<br>+00 123 456 789<br>hola@cafeaurora.example</p>
+      <div class="d-flex gap-3 mt-3">
+        <a class="soc" href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a class="soc" href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a class="soc" href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a class="soc" href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div></div></div>
+  </div></div>
+</section>
+
+<!-- RESERVAS -->
+<section id="reservas" class="py-5">
+  <div class="container"><div class="row justify-content-center"><div class="col-lg-8">
+    <div class="raised p-4 p-lg-5">
+      <h2 class="display-6 mb-4">Reserva tu mesa</h2>
+      <form class="row g-3">
+        <div class="col-md-6"><input class="form-control" placeholder="Nombre" aria-label="Nombre" required></div>
+        <div class="col-md-6"><input class="form-control" type="email" placeholder="Correo" aria-label="Correo" required></div>
+        <div class="col-md-6"><input class="form-control" type="date" aria-label="Fecha" required></div>
+        <div class="col-md-6"><select class="form-select" aria-label="Personas"><option>2 personas</option><option>3 personas</option><option>4 personas</option><option>5 o más</option></select></div>
+        <div class="col-12"><button class="btn btn-neu btn-acc w-100">Confirmar reserva</button></div>
+        <p data-ok hidden class="text-center mb-0 fw-bold">Gracias, recibimos tu solicitud.</p>
+      </form>
+    </div>
+  </div></div></div>
+</section>
+</main>
+
+<footer class="py-4 text-center small opacity-75">© 2026 Café Aurora · Plantilla de ejemplo</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.querySelectorAll('[data-u]').forEach(e=>{const u='https://images.unsplash.com/photo-'+e.dataset.u+'?auto=format&fit=crop&w=1200&q=70';e.tagName==='IMG'?e.src=u:e.style.backgroundImage='url('+u+')'});
+  const nav=document.getElementById('nav');
+  document.querySelectorAll('#nav .nav-link').forEach(a=>a.addEventListener('click',()=>bootstrap.Collapse.getInstance(nav)?.hide()));
+  document.querySelectorAll('form').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();f.querySelector('[data-ok]').hidden=false}));
+</script>
+</body>
+</html>

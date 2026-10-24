@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taco Bruto · Brutalismo · Landing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root{--y:#ffe14d;--k:#000;--pk:#ff5fa2;--bl:#3a86ff;--gr:#34d399}
+  html{scroll-padding-top:80px}
+  body{background:var(--y);color:#000;font-family:'Space Mono',monospace;font-size:1rem}
+  h1,h2,h3,.hd{font-family:'Archivo Black',sans-serif;text-transform:uppercase;line-height:.95}
+  .bx{border:4px solid #000;box-shadow:8px 8px 0 #000;background:#fff}
+  .bx-sm{border:3px solid #000;box-shadow:5px 5px 0 #000}
+  .btn{display:inline-block;border:4px solid #000;box-shadow:6px 6px 0 #000;padding:.8rem 1.5rem;font-family:'Archivo Black';text-transform:uppercase;transition:transform .1s,box-shadow .1s}
+  .btn:hover{transform:translate(4px,4px);box-shadow:2px 2px 0 #000}
+  .field{width:100%;border:4px solid #000;padding:.85rem 1rem;background:#fff;font-family:'Space Mono'}
+  .field:focus{outline:none;box-shadow:6px 6px 0 var(--bl)}
+  .bgimg{background-size:cover;background-position:center;position:relative}
+  .bgimg::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.6)}
+  .marquee{overflow:hidden;white-space:nowrap;border-block:4px solid #000;background:#000;color:var(--y)}
+  .marquee span{display:inline-block;padding:.7rem 0;animation:mq 22s linear infinite;font-family:'Archivo Black';text-transform:uppercase}
+  @keyframes mq{to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion:reduce){.marquee span{animation:none}}
+  a:focus-visible,button:focus-visible{outline:4px solid var(--bl);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<header class="sticky top-0 z-50 bg-white border-b-4 border-black">
+  <nav class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <a href="#inicio" class="hd text-2xl bg-black text-[color:var(--y)] px-2 py-1">Taco Bruto</a>
+    <div class="hidden md:flex items-center gap-6 font-bold uppercase text-sm">
+      <a href="#carta" class="hover:underline decoration-4">Carta</a>
+      <a href="#salsas" class="hover:underline decoration-4">Salsas</a>
+      <a href="#visita" class="hover:underline decoration-4">Visita</a>
+      <a href="#pedido" class="btn !py-2 !px-4 !text-sm" style="background:var(--pk)">Pedir</a>
+    </div>
+    <button id="burger" class="md:hidden bx-sm bg-[color:var(--y)] w-11 h-11 grid place-items-center" aria-label="Abrir menú" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+  </nav>
+  <div id="mobile" class="hidden md:hidden border-t-4 border-black bg-[color:var(--pk)]">
+    <div class="flex flex-col hd text-2xl">
+      <a href="#carta" class="p-4 border-b-4 border-black">Carta</a>
+      <a href="#salsas" class="p-4 border-b-4 border-black">Salsas</a>
+      <a href="#visita" class="p-4 border-b-4 border-black">Visita</a>
+      <a href="#pedido" class="p-4">Pedir</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section id="inicio" class="px-4 py-12 md:py-20">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-12 gap-10 items-center">
+    <div class="md:col-span-7">
+      <p class="inline-block bg-black text-white px-3 py-1 text-sm mb-6">Abierto hasta las 2 a.m.</p>
+      <h1 class="text-6xl sm:text-8xl">Tacos sin filtros.</h1>
+      <p class="mt-6 text-lg max-w-lg font-bold">Tortilla de maíz, carne al pastor, cilantro y limón. Nada más. Texto genérico para tu taquería.</p>
+      <div class="mt-8 flex flex-wrap gap-5">
+        <a href="#pedido" class="btn" style="background:var(--pk)">Pedir ahora</a>
+        <a href="#carta" class="btn bg-white">Ver carta</a>
+      </div>
+    </div>
+    <div class="md:col-span-5 relative">
+      <img data-u="1551504734-5ee1c4a1479b" alt="Tacos al pastor" class="bx w-full h-80 md:h-[28rem] object-cover rotate-2 bg-pink-300">
+      <div class="absolute -bottom-5 -left-3 bx-sm px-4 py-2 hd text-2xl -rotate-3" style="background:var(--bl);color:#fff">$2 el taco</div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee"><span>Al pastor ✺ Suadero ✺ Campechano ✺ Lengua ✺ Nopal ✺ Al pastor ✺ Suadero ✺ Campechano ✺ Lengua ✺ Nopal ✺ Al pastor ✺ Suadero ✺ Campechano ✺ Lengua ✺ Nopal ✺ Al pastor ✺ Suadero ✺ Campechano ✺ Lengua ✺ Nopal ✺ </span></div>
+
+<!-- CARTA -->
+<section id="carta" class="px-4 py-16 md:py-24">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-5xl sm:text-7xl mb-10">La carta</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <article class="bx"><img data-u="1551504734-5ee1c4a1479b" alt="Taco al pastor" class="w-full h-52 object-cover border-b-4 border-black bg-pink-200"><div class="p-5"><h3 class="text-2xl">Al pastor</h3><p class="mt-2 text-sm">Cerdo marinado, piña y cebolla.</p><p class="hd text-3xl mt-4" style="color:var(--pk);-webkit-text-stroke:2px #000">$2</p></div></article>
+      <article class="bx"><img data-u="1565299507177-b0ac66763828" alt="Quesadilla" class="w-full h-52 object-cover border-b-4 border-black bg-blue-200"><div class="p-5"><h3 class="text-2xl">Quesadilla</h3><p class="mt-2 text-sm">Queso Oaxaca derretido y salsa verde.</p><p class="hd text-3xl mt-4" style="color:var(--bl);-webkit-text-stroke:2px #000">$4</p></div></article>
+      <article class="bx"><img data-u="1555939594-58d7cb561ad1" alt="Brochetas" class="w-full h-52 object-cover border-b-4 border-black bg-green-200"><div class="p-5"><h3 class="text-2xl">Gringa</h3><p class="mt-2 text-sm">Tortilla de harina, carne y queso.</p><p class="hd text-3xl mt-4" style="color:var(--gr);-webkit-text-stroke:2px #000">$5</p></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- SALSAS (imagen de fondo) -->
+<section id="salsas" class="bgimg text-white px-4 py-20 md:py-28 border-y-4 border-black" data-u="1555396273-367ea4eb4db5">
+  <div class="relative max-w-6xl mx-auto">
+    <h2 class="text-5xl sm:text-7xl max-w-3xl">Tres salsas. Cero piedad.</h2>
+    <div class="grid sm:grid-cols-3 gap-6 mt-10 text-black">
+      <div class="bx-sm bg-[color:var(--gr)] p-5"><p class="hd text-2xl">Verde</p><p class="text-sm mt-2 font-bold">Tomatillo y cilantro. Picor 2/5.</p></div>
+      <div class="bx-sm bg-[color:var(--y)] p-5"><p class="hd text-2xl">Habanero</p><p class="text-sm mt-2 font-bold">Naranja y ajo asado. Picor 4/5.</p></div>
+      <div class="bx-sm bg-[color:var(--pk)] p-5"><p class="hd text-2xl">Del diablo</p><p class="text-sm mt-2 font-bold">Chile de árbol. Picor 5/5.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- VISITA -->
+<section id="visita" class="px-4 py-16 md:py-24">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+    <div class="bx p-6 md:p-8">
+      <h2 class="text-4xl sm:text-5xl">Ven por unos</h2>
+      <ul class="mt-6 space-y-3 font-bold">
+        <li><i class="fa-solid fa-location-dot w-7"></i>Calle Cruda 99, Centro</li>
+        <li><i class="fa-solid fa-clock w-7"></i>Lun–Dom · 18:00–02:00</li>
+        <li><i class="fa-solid fa-phone w-7"></i>+00 123 456 789</li>
+      </ul>
+      <div class="flex gap-4 mt-8">
+        <a href="#" aria-label="Instagram" class="bx-sm w-12 h-12 grid place-items-center bg-[color:var(--pk)] hover:translate-x-1 hover:translate-y-1 transition"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="Facebook" class="bx-sm w-12 h-12 grid place-items-center bg-[color:var(--bl)] text-white hover:translate-x-1 hover:translate-y-1 transition"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="TikTok" class="bx-sm w-12 h-12 grid place-items-center bg-[color:var(--y)] hover:translate-x-1 hover:translate-y-1 transition"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="#" aria-label="WhatsApp" class="bx-sm w-12 h-12 grid place-items-center bg-[color:var(--gr)] hover:translate-x-1 hover:translate-y-1 transition"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div id="pedido" class="bx p-6 md:p-8" style="background:var(--bl);color:#fff">
+      <h2 class="text-4xl sm:text-5xl">Haz tu pedido</h2>
+      <form class="mt-6 grid gap-4 text-black">
+        <input class="field" placeholder="Nombre" aria-label="Nombre" required>
+        <input class="field" type="tel" placeholder="Teléfono" aria-label="Teléfono" required>
+        <select class="field" aria-label="Pedido"><option>10 tacos al pastor</option><option>20 tacos surtidos</option><option>Quesadilla + 5 tacos</option></select>
+        <button class="btn bg-[color:var(--y)]">Enviar pedido</button>
+        <p data-ok hidden class="font-bold text-white bg-black p-3">Recibido. Te llamamos en un momento.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="bg-black text-[color:var(--y)] px-4 py-8 text-center">
+  <p class="hd text-3xl">Taco Bruto</p>
+  <p class="text-sm mt-2 text-white">© 2026 · Plantilla de ejemplo</p>
+</footer>
+
+<script>
+  document.querySelectorAll('[data-u]').forEach(e=>{const u='https://images.unsplash.com/photo-'+e.dataset.u+'?auto=format&fit=crop&w=1400&q=70';e.tagName==='IMG'?e.src=u:e.style.backgroundImage='url('+u+')'});
+  const b=document.getElementById('burger'),m=document.getElementById('mobile');
+  b.onclick=()=>{const o=m.classList.toggle('hidden');b.setAttribute('aria-expanded',!o);b.innerHTML=o?'<i class="fa-solid fa-bars"></i>':'<i class="fa-solid fa-xmark"></i>'};
+  m.querySelectorAll('a').forEach(a=>a.onclick=()=>{m.classList.add('hidden');b.innerHTML='<i class="fa-solid fa-bars"></i>'});
+  document.querySelectorAll('form').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();f.querySelector('[data-ok]').hidden=false}));
+</script>
+</body>
+</html>
